@@ -1,0 +1,14 @@
+<div class="dashboard__container">
+  <app-page-header
+    [title]="pageTitle">
+  </app-page-header>
+  <ng-container *ngIf="bikeStations.length;else ta">
+    <app-card *ngFor="let bikeStation of bikeStations">
+      {{bikeStation.name}}
+    </app-card>
+
+  </ng-container>
+</div>
+<ng-template #ta>
+  askdjl
+</ng-template>

@@ -1,0 +1,14 @@
+@import "../../../../styles/sizes";
+
+.page-header {
+  display: flex;
+  color: #000000;
+
+  &__title {
+    font-size: pxToRem(35);
+  }
+
+  &__subtitle {
+    font-size: pxToRem(18);
+  }
+}

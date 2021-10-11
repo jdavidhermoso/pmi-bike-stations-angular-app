@@ -1,0 +1,7 @@
+$standard-size: 30px;
+$standard-size-md: 23px;
+$base-browser-size: 16;
+
+@function pxToRem($px, $default-size: $base-browser-size) {
+  @return ($px / $default-size) * 1rem;
+}

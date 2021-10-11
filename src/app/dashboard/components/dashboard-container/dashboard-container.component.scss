@@ -1,0 +1,14 @@
+@import "../../../../styles/color";
+
+.dashboard__header {
+  color: $titles;
+}
+
+.header__page-title {
+  font-size: 35px;
+  line-height: 1.2;
+}
+
+.header__title {
+  display: flex;
+}

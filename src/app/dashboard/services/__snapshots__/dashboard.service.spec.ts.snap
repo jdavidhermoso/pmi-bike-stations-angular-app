@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DashboardService should return the list of bike stations 1`] = `
+Object {
+  "bikeStations": Array [
+    Object {
+      "address": "C/ CARTAGENA, 308",
+      "altitude": 46,
+      "capacity": 18,
+      "lat": 41.410314,
+      "lon": 2.1757334,
+      "name": "C/ CARTAGENA, 308",
+      "nearby_distance": 1000,
+      "physical_configuration": "ELECTRICBIKESTATION",
+      "post_code": "08025",
+      "station_id": 20,
+    },
+    Object {
+      "address": "C/ SANT ANTONI MARIA CLARET, 214",
+      "altitude": 52,
+      "capacity": 21,
+      "lat": 41.4108439,
+      "lon": 2.1740575,
+      "name": "C/ SANT ANTONI MARIA CLARET, 214",
+      "nearby_distance": 1000,
+      "physical_configuration": "ELECTRICBIKESTATION",
+      "post_code": "08025",
+      "station_id": 21,
+    },
+    Object {
+      "address": "C/ SARDENYA, 292",
+      "altitude": 28,
+      "capacity": 19,
+      "lat": 41.4016969,
+      "lon": 2.175767,
+      "name": "C/ SARDENYA, 292",
+      "nearby_distance": 1000,
+      "physical_configuration": "ELECTRICBIKESTATION",
+      "post_code": "08013",
+      "station_id": 22,
+    },
+    Object {
+      "address": "C/ BRUC, 45",
+      "altitude": 21,
+      "capacity": 27,
+      "lat": 41.3924661,
+      "lon": 2.1717397,
+      "name": "C/ BRUC, 45",
+      "nearby_distance": 1000,
+      "physical_configuration": "ELECTRICBIKESTATION",
+      "post_code": "08010",
+      "station_id": 23,
+    },
+  ],
+}
+`;
