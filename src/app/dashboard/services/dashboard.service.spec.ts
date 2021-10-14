@@ -1,12 +1,21 @@
 import {DashboardService} from './dashboard.service';
 import {of} from 'rxjs';
-import {DashboardState} from '../../state/reducers';
-import {apiResponseDataMock} from '../models/BE/mocks/api-response.mock';
+import {BikeStation} from '../models/bike-station';
 
 describe('DashboardService', () => {
   let service: DashboardService;
   const httpClientMock = {
-    get: jest.fn(() => of(apiResponseDataMock))
+    get: jest.fn(() => of([
+        {
+          img: '001.jpeg',
+          type: 'anchor',
+          id: '01',
+          name: 'PARC DE SES VELES',
+          lng: 2.659399509,
+          lat: 39.56590061
+        }]
+      )
+    )
   };
 
   beforeEach(() => {
@@ -19,8 +28,8 @@ describe('DashboardService', () => {
 
   it('should return the list of bike stations', done => {
     service.loadBikeStations()
-      .subscribe((dashboardState: DashboardState) => {
-        expect(dashboardState).toMatchSnapshot();
+      .subscribe((bikeStations: BikeStation[]) => {
+        expect(bikeStations).toMatchSnapshot();
         done();
       });
   });

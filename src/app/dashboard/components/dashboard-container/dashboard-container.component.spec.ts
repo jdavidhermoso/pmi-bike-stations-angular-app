@@ -1,11 +1,19 @@
 import {DashboardContainerComponent} from './dashboard-container.component';
 import {of} from 'rxjs';
-import {bikeStationsDataMock} from '../../models/UI/mock/bike-stations-ui.mock';
 
 describe('DashboardContainerComponent', () => {
   const mockStore = {
     dispatch: jest.fn(),
-    pipe: jest.fn(() => of(bikeStationsDataMock))
+    pipe: jest.fn(() => of([
+      {
+        img: '003.jpeg',
+        type: 'anchor',
+        id: '01',
+        name: 'PLAÇA DELS PATINS',
+        lng: 2.659399509,
+        lat: 39.56590061
+      }
+    ]))
   };
   let component: DashboardContainerComponent;
 
@@ -14,8 +22,6 @@ describe('DashboardContainerComponent', () => {
   });
 
   it('should create', () => {
-    component.ngOnInit();
-
     expect(mockStore.dispatch).toHaveBeenCalled();
   });
 });

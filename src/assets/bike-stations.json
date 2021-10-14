@@ -1,0 +1,298 @@
+[
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "01",
+    "name": "PARC DE SES VELES",
+    "lng": 2.659399509,
+    "lat": 39.56590061
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "06",
+    "name": "MANUEL AZAÑA",
+    "lng": 2.665643692,
+    "lat": 39.57135084
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "59",
+    "name": "MATEU ENRIC LLADÓ",
+    "lng": 2.656159401,
+    "lat": 39.56767054
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "60",
+    "name": "TRAVESSA BALLESTER",
+    "lng": 2.65644908,
+    "lat": 39.57027572
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "09",
+    "name": "F. MANUEL HERREROS",
+    "lng": 2.664034367,
+    "lat": 39.57458439
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "07",
+    "name": "ARAGÓ-NUREDDUNA",
+    "lng": 2.657833099,
+    "lat": 39.57266578
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "17",
+    "name": "ARAGÓ-JAUME BALMES",
+    "lng": 2.66289711,
+    "lat": 39.57886798
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "21",
+    "name": "PALEXANDER FLEMING",
+    "lng": 2.655279636,
+    "lat": 39.58131563
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "31",
+    "name": "PL. MADRID",
+    "lng": 2.641010284,
+    "lat": 39.57718104
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "37",
+    "name": "AVD ARGENTINA",
+    "lng": 2.6406025890000002,
+    "lat": 39.57450169
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "52",
+    "name": "CECILI METEL",
+    "lng": 2.649496794,
+    "lat": 39.57688334
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "29",
+    "name": "INSTITUT BALEAR",
+    "lng": 2.646095753,
+    "lat": 39.57728027
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "46",
+    "name": "PL REI JOAN CARLES I",
+    "lng": 2.64695406,
+    "lat": 39.57137565
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "51",
+    "name": "VIA ROMA",
+    "lng": 2.647608519,
+    "lat": 39.57529558
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "41",
+    "name": "FÁBRICA",
+    "lng": 2.637383938,
+    "lat": 39.57274848
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "45",
+    "name": "JAUME III",
+    "lng": 2.642920017,
+    "lat": 39.57247557
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "47",
+    "name": "PL PORTA S CATALINA",
+    "lng": 2.641439438,
+    "lat": 39.57113582
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "49",
+    "name": "PL DE LA REINA",
+    "lng": 2.645848989,
+    "lat": 39.56797655
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "55",
+    "name": "PL. SANTA EULALIA",
+    "lng": 2.650655508,
+    "lat": 39.56914268
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "13",
+    "name": "PARC DE ESTACIONS",
+    "lng": 2.655408382,
+    "lat": 39.57602331
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "15",
+    "name": "J VERDAGUER-J BALMES",
+    "lng": 2.659850121,
+    "lat": 39.58015797
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "63",
+    "name": "PL. DESPANYA",
+    "lng": 2.654550076,
+    "lat": 39.57543616
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "65",
+    "name": "PL ALEXANDRE JAUME",
+    "lng": 2.655934095,
+    "lat": 39.57226055
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "16",
+    "name": "PARC DE SA RIERA",
+    "lng": 2.644529343,
+    "lat": 39.5815637
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "24",
+    "name": "BLANQUERNA-SALLENT",
+    "lng": 2.651245594,
+    "lat": 39.57809894
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "27",
+    "name": "PL. PARIS",
+    "lng": 2.649158,
+    "lat": 39.584186
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "25",
+    "name": "BLANQUERNA BARTOLOMÉ",
+    "lng": 2.649260759,
+    "lat": 39.58085257
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "18",
+    "name": "METGE DARDER",
+    "lng": 2.667289,
+    "lat": 39.577219
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "34",
+    "name": "SANT-FERRAN",
+    "lng": 2.633347,
+    "lat": 39.5776
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "61",
+    "name": "PLAÇA PONT",
+    "lng": 2.633678,
+    "lat": 39.570342
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "70",
+    "name": "CTRA. VALLDEMOSSA",
+    "lng": 2.650011,
+    "lat": 39.587861
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "77",
+    "name": "SON COSTA - SON FORTEZA",
+    "lng": 2.6661,
+    "lat": 39.584114
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "02",
+    "name": "MANUEL AZAÑA",
+    "lng": 2.663109,
+    "lat": 39.566235
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "19",
+    "name": "ARXIDUC LLUIS SALVADOR",
+    "lng": 2.657432,
+    "lat": 39.58455
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "71",
+    "name": "SAN VICENTE DE PAUL",
+    "lng": 2.647577,
+    "lat": 39.593135
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "80",
+    "name": "P. BARTOMEU BARCELÓ I MIR",
+    "lng": 2.67077,
+    "lat": 39.561516
+  },
+  {
+    "img": "001.jpeg",
+    "type": "anchor",
+    "id": "32",
+    "name": "PLAÇA BARCELONA",
+    "lng": 2.639351,
+    "lat": 39.580072
+  }
+]

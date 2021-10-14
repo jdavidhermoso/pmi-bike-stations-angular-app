@@ -1,11 +1,6 @@
 import * as fromDashboard from './dashboard.reducer';
 import {DashboardState} from './dashboard.reducer';
 import {getBikeStationsSuccess} from '../actions';
-import {
-  bikeStation1, bikeStation2,
-  bikeStation3,
-  bikeStation4,
-} from '../../dashboard/models/UI/mock/bike-stations-ui.mock';
 
 describe('dasbhoardReducer', () => {
   describe('unknown action', () => {
@@ -24,10 +19,7 @@ describe('dasbhoardReducer', () => {
     it('should retrieve data of deployed apps and update the state', () => {
       const {initialDashboardState} = fromDashboard;
       const newState: DashboardState = {
-        bikeStations: [
-          bikeStation1,
-          bikeStation3,
-        ],
+        bikeStations: [],
       };
 
       const action = getBikeStationsSuccess(newState);
@@ -40,9 +32,22 @@ describe('dasbhoardReducer', () => {
   it('selectDashboard: should return dasbhoardState', () => {
     const appState = {
       dashboard: {
-        bikeStations: [
-          bikeStation1,
-          bikeStation2
+        bikeStations: [{
+          img: '001.jpeg',
+          type: 'anchor',
+          id: '21',
+          name: 'PALEXANDER FLEMING',
+          lng: 2.655279636,
+          lat: 39.58131563
+        },
+          {
+            img: '001.jpeg',
+            type: 'anchor',
+            id: '31',
+            name: 'PL. MADRID',
+            lng: 2.641010284,
+            lat: 39.57718104
+          }
         ],
       }
     };
@@ -52,10 +57,7 @@ describe('dasbhoardReducer', () => {
   it('selectBikeStations: should return bike stations', () => {
     const appState = {
       dashboard: {
-        bikeStations: [
-          bikeStation4,
-          bikeStation3
-        ],
+        bikeStations: [],
       }
     };
     expect(fromDashboard.selectBikeStations(appState)).toStrictEqual(appState.dashboard.bikeStations);

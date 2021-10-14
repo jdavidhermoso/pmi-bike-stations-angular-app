@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bcn-bike-stations-service": {
+    "pmi-bike-sharing-stations": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,12 +20,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bcn-bike-stations-service",
+            "outputPath": "dist/pmi-bike-sharing-stations",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,7 +32,13 @@
             "styles": [
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -63,23 +68,24 @@
                 }
               ]
             }
-          }
+          },
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bcn-bike-stations-service:build"
+            "browserTarget": "pmi-bike-sharing-stations:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "bcn-bike-stations-service:build:production"
+              "browserTarget": "pmi-bike-sharing-stations:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bcn-bike-stations-service:build"
+            "browserTarget": "pmi-bike-sharing-stations:build"
           }
         },
         "lint": {
@@ -99,16 +105,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "bcn-bike-stations-service:serve"
+            "devServerTarget": "pmi-bike-sharing-stations:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "bcn-bike-stations-service:serve:production"
+              "devServerTarget": "pmi-bike-sharing-stations:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "bcn-bike-stations-service"
+  "defaultProject": "pmi-bike-sharing-stations"
 }

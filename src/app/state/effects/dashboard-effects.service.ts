@@ -7,8 +7,8 @@ import {
   getBikeStationsStart,
   getBikeStationsSuccess
 } from '../actions';
-import {DashboardService, BikeStation, ApiResponse} from '../../dashboard';
-import {DashboardState} from '../reducers';
+import {DashboardService} from '../../dashboard';
+import {BikeStation} from '../../dashboard/models/bike-station';
 
 @Injectable()
 export class DashboardEffects {
@@ -17,7 +17,9 @@ export class DashboardEffects {
       ofType(getBikeStationsStart),
       mergeMap(() => this.dashboardService.loadBikeStations()
         .pipe(
-          map((dashboardState: DashboardState) => getBikeStationsSuccess(dashboardState)
+          map((bikeStations: BikeStation[]) => getBikeStationsSuccess({
+              bikeStations,
+            })
           ),
           catchError(() => of(getBikeStationsError()))
         ))

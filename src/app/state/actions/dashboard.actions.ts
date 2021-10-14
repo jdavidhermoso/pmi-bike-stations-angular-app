@@ -1,5 +1,5 @@
 import {createAction, props} from '@ngrx/store';
-import {BikeStation} from '../../dashboard';
+import {BikeStation} from '../../dashboard/models/bike-station';
 
 export const dashboardActionsIds = {
   getBikeStationsStart: '[Dashboard] getBikeStations start',

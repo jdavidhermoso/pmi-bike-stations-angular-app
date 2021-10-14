@@ -2,13 +2,12 @@
   <app-page-header
     [title]="pageTitle">
   </app-page-header>
-  <ng-container *ngIf="bikeStations.length;else ta">
+  <ng-container *ngIf="(bikeStations | async) as bikeStations;else nodata">
     <app-card *ngFor="let bikeStation of bikeStations">
       {{bikeStation.name}}
     </app-card>
-
   </ng-container>
 </div>
-<ng-template #ta>
-  askdjl
+<ng-template #nodata>
+  There's no data to show
 </ng-template>

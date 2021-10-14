@@ -1,7 +1,7 @@
 import {createReducer, createSelector, on} from '@ngrx/store';
-import {BikeStation} from '../../dashboard';
 import * as DashboardActions from '../actions/dashboard.actions';
-import {AppState} from '../../dashboard/models/UI/app.state';
+import {AppState} from '../../dashboard/models/app.state';
+import {BikeStation} from '../../dashboard/models/bike-station';
 
 export interface DashboardState {
   bikeStations: BikeStation[];
@@ -15,7 +15,9 @@ export const selectDashboard = (appState: AppState) => appState.dashboard;
 
 export const selectBikeStations = createSelector(
   selectDashboard,
-  ({bikeStations}: DashboardState) => bikeStations
+  ({bikeStations}: DashboardState) => {
+    return bikeStations;
+  }
 );
 
 export const dashboardReducer = createReducer(
