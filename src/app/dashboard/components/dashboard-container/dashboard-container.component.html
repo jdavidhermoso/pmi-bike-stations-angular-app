@@ -1,7 +1,4 @@
 <div class="dashboard__container">
-  <app-page-header
-    [title]="pageTitle">
-  </app-page-header>
   <ng-container *ngIf="(bikeStations | async) as bikeStations;else nodata">
     <app-card *ngFor="let bikeStation of bikeStations">
       {{bikeStation.name}}
