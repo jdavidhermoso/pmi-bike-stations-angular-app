@@ -8,6 +8,7 @@ import {StoreModule} from '@ngrx/store';
 import * as fromDashboard from './state/reducers/dashboard.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {DashboardEffects} from './state/effects';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {DashboardEffects} from './state/effects';
       dashboard: fromDashboard.dashboardReducer
     }),
     EffectsModule.forRoot([DashboardEffects]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
