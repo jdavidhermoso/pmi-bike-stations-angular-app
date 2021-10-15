@@ -9,5 +9,5 @@ export const bikeStationsGalleryActionsIds = {
 
 export const getBikeStationsStart = createAction(bikeStationsGalleryActionsIds.getBikeStationsStart);
 export const getBikeStationsSuccess = createAction(bikeStationsGalleryActionsIds.getBikeStationsSuccess,
-  props<BikeStationsState>());
+  props<{ payload: BikeStationsState }>());
 export const getBikeStationsError = createAction(bikeStationsGalleryActionsIds.getBikeStationsError);

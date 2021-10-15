@@ -1,1 +1,1 @@
-export * from './bike-stations-gallery-effects.service';
+export * from './bike-stations-gallery-effects';
