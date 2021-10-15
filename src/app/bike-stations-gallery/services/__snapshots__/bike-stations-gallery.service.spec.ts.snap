@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DashboardService should return the list of bike stations 1`] = `
+exports[`BikeStationsGalleryService should return the list of bike stations 1`] = `
 Array [
   Object {
     "id": "01",

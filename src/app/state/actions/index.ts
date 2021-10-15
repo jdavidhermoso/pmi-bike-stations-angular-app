@@ -1,1 +1,1 @@
-export * from './dashboard.actions';
+export * from './bike-stations-list.actions';

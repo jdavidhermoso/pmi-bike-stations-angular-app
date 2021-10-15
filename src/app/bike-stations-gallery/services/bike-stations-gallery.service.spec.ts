@@ -1,9 +1,9 @@
-import {DashboardService} from './dashboard.service';
+import {BikeStationsGalleryService} from './bike-stations-gallery.service';
 import {of} from 'rxjs';
-import {BikeStation} from '../models/bike-station';
+import {BikeStation} from '../../models/bike-station';
 
-describe('DashboardService', () => {
-  let service: DashboardService;
+describe('BikeStationsGalleryService', () => {
+  let service: BikeStationsGalleryService;
   const httpClientMock = {
     get: jest.fn(() => of([
         {
@@ -19,7 +19,7 @@ describe('DashboardService', () => {
   };
 
   beforeEach(() => {
-    service = new DashboardService(httpClientMock as any);
+    service = new BikeStationsGalleryService(httpClientMock as any);
   });
 
   it('should be created', () => {
