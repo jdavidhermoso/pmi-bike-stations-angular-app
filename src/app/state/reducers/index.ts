@@ -1,1 +1,1 @@
-export * from './dashboard.reducer';
+export * from './bike-stations-gallery.reducer';

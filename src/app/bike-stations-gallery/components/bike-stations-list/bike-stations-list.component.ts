@@ -1,19 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from '@ngrx/store';
+import {AppState} from '../../../models/app.state';
 import {getBikeStationsStart} from '../../../state/actions';
-import {AppState} from '../../models/app.state';
 import {selectBikeStations} from '../../../state/reducers';
-import {BikeStation} from '../../models/bike-station';
 import {Observable} from 'rxjs';
+import {BikeStation} from '../../../models/bike-station';
 
 @Component({
-  selector: 'app-dashboard-container',
-  templateUrl: './dashboard-container.component.html',
-  styleUrls: ['./dashboard-container.component.scss']
+  selector: 'app-bike-stations-list',
+  templateUrl: './bike-stations-list.component.html',
+  styleUrls: ['./bike-stations-list.component.scss']
 })
-export class DashboardContainerComponent {
+export class BikeStationsListComponent {
   public bikeStations: Observable<BikeStation[]>;
-  public pageTitle = 'Palma bike sharing station';
 
   constructor(private store: Store<AppState>) {
     this.store.dispatch(getBikeStationsStart());

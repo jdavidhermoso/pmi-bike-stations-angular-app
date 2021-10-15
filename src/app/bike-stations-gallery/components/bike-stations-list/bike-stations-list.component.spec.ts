@@ -1,7 +1,7 @@
-import {DashboardContainerComponent} from './dashboard-container.component';
 import {of} from 'rxjs';
+import {BikeStationsListComponent} from './bike-stations-list.component';
 
-describe('DashboardContainerComponent', () => {
+describe('BikeStationsListComponent', () => {
   const mockStore = {
     dispatch: jest.fn(),
     pipe: jest.fn(() => of([
@@ -15,10 +15,10 @@ describe('DashboardContainerComponent', () => {
       }
     ]))
   };
-  let component: DashboardContainerComponent;
+  let component: BikeStationsListComponent;
 
   beforeEach(() => {
-    component = new DashboardContainerComponent(mockStore as any);
+    component = new BikeStationsListComponent(mockStore as any);
   });
 
   it('should create', () => {

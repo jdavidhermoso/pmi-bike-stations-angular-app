@@ -7,15 +7,14 @@ import {
   getBikeStationsStart,
   getBikeStationsSuccess
 } from '../actions';
-import {DashboardService} from '../../dashboard';
-import {BikeStation} from '../../dashboard/models/bike-station';
+import {BikeStation} from '../../models/bike-station';
+import {BikeStationsGalleryService} from '../../bike-stations-gallery/services';
 
 @Injectable()
-export class DashboardEffects {
-
+export class BikeStationsGalleryEffects {
   getBikeStations$ = createEffect(() => this.actions$.pipe(
       ofType(getBikeStationsStart),
-      mergeMap(() => this.dashboardService.loadBikeStations()
+      mergeMap(() => this.bikeStationsGalleryService.loadBikeStations()
         .pipe(
           map((bikeStations: BikeStation[]) => getBikeStationsSuccess({
               bikeStations,
@@ -27,6 +26,6 @@ export class DashboardEffects {
   );
 
   constructor(
-    private actions$: Actions, private dashboardService: DashboardService) {
+    private actions$: Actions, private bikeStationsGalleryService: BikeStationsGalleryService) {
   }
 }

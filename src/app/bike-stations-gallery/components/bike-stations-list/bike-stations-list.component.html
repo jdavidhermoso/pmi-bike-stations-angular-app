@@ -1,8 +1,8 @@
-<div class="dashboard__container">
+<div>
   <ng-container *ngIf="(bikeStations | async) as bikeStations;else nodata">
-    <app-card *ngFor="let bikeStation of bikeStations">
+    <div *ngFor="let bikeStation of bikeStations">
       {{bikeStation.name}}
-    </app-card>
+    </div>
   </ng-container>
 </div>
 <ng-template #nodata>

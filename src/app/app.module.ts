@@ -2,13 +2,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {DashboardModule} from './dashboard';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
-import * as fromDashboard from './state/reducers/dashboard.reducer';
+import * as fromBikeStationsGallery from './state/reducers/bike-stations-gallery.reducer';
 import {EffectsModule} from '@ngrx/effects';
-import {DashboardEffects} from './state/effects';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BikeStationsGalleryEffects} from './state/effects';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-gallery.module';
 
 @NgModule({
   declarations: [
@@ -16,13 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    DashboardModule,
     StoreModule.forRoot({
-      dashboard: fromDashboard.dashboardReducer
+      bikeStationsGallery: fromBikeStationsGallery.bikeStationsGalleryReducer
     }),
-    EffectsModule.forRoot([DashboardEffects]),
+    EffectsModule.forRoot([BikeStationsGalleryEffects]),
     StoreDevtoolsModule.instrument(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BikeStationsGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

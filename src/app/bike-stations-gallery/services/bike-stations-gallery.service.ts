@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {BikeStation} from '../models/bike-station';
+import {BikeStation} from '../../models/bike-station';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DashboardService {
+export class BikeStationsGalleryService {
 
   constructor(private http: HttpClient) {
   }
