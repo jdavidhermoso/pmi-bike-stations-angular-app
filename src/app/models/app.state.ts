@@ -1,5 +1,5 @@
-import {BikeStationsState} from '../state/reducers';
+import {BikeStationsGalleryState} from '../state/reducers';
 
 export interface AppState {
-  bikeStationsGallery: BikeStationsState;
+  bikeStationsGallery: BikeStationsGalleryState;
 }

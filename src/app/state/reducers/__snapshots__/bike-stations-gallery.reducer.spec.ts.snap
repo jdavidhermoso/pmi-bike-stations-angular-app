@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filterBikeStations: should return only one bike station 1`] = `
+Array [
+  Object {
+    "id": "77",
+    "img": "001.jpeg",
+    "kmToCityCenter": 4,
+    "lat": 39.584114,
+    "lng": 2.6661,
+    "name": "SON COSTA - SON FORTEZA",
+    "type": "anchor",
+  },
+]
+`;

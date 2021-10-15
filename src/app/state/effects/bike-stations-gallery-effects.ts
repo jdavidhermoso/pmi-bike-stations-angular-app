@@ -17,7 +17,9 @@ export class BikeStationsGalleryEffects {
       mergeMap(() => this.bikeStationsGalleryService.loadBikeStations()
         .pipe(
           map((bikeStations: BikeStation[]) => getBikeStationsSuccess({
-              bikeStations,
+              payload: {
+                stations: bikeStations
+              }
             })
           ),
           catchError(() => of(getBikeStationsError()))

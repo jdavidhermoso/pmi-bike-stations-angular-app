@@ -5,6 +5,7 @@ export interface BikeStation {
   name: string;
   lng: number;
   lat: number;
+  kmToCityCenter: number;
 }
 
 
