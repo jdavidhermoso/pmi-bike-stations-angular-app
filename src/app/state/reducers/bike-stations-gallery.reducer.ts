@@ -1,4 +1,4 @@
-import {Action, createReducer, createSelector, on} from '@ngrx/store';
+import {createReducer, createSelector, on} from '@ngrx/store';
 import * as BikeStationsListActions from '../actions/bike-stations-list.actions';
 import * as FiltersActions from '../actions/filters.actions';
 import {AppState} from '../../models/app.state';
@@ -52,21 +52,22 @@ export const bikeStationsGalleryReducer = createReducer(
     })
   ),
   on(FiltersActions.filter, (currentState: BikeStationsGalleryState, {payload}) => ({
-    ...currentState,
-    filters: payload,
-  }))
+      ...currentState,
+      filters: payload,
+    })
+  )
 );
 
 export const filterBikeStations = (bikeStations: BikeStation[], filters: Filters): BikeStation[] => {
   return bikeStations.filter(
     (bikeStation: BikeStation) =>
       filterBikeStationByName(bikeStation.name, filters.name) &&
-      filterDistanceToCenter(bikeStation, filters.kmToCityCenter)
+      filterDistanceToCenter(bikeStation.kmToCityCenter, filters.kmToCityCenter)
   );
 };
 
-export const filterDistanceToCenter = (bikeStation: BikeStation, kmToCityCenter: number) => {
-  return bikeStation.kmToCityCenter <= kmToCityCenter;
+export const filterDistanceToCenter = (bikeStationKmToCityCenter: number, filterKmToCityCenter: number) => {
+  return bikeStationKmToCityCenter <= filterKmToCityCenter;
 };
 
 export const filterBikeStationByName = (bikeStationName: string, nameFilter: string) => {

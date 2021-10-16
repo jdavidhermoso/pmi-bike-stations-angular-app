@@ -2,11 +2,7 @@ import {Injectable} from '@angular/core';
 import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {of} from 'rxjs';
 import {catchError, map, mergeMap} from 'rxjs/operators';
-import {
-  getBikeStationsError,
-  getBikeStationsStart,
-  getBikeStationsSuccess
-} from '../actions';
+import {getBikeStationsError, getBikeStationsStart, getBikeStationsSuccess} from '../actions';
 import {BikeStation} from '../../models/bike-station';
 import {BikeStationsGalleryService} from '../../bike-stations-gallery/services';
 

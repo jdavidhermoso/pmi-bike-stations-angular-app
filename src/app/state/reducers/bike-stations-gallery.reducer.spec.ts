@@ -121,15 +121,7 @@ describe('bikeStationsGalleryReducer', () => {
 
 it('filterDistanceToCenter: should return falsy because bike station is filtered', () => {
   expect(
-    filterDistanceToCenter({
-      img: '',
-      type: '',
-      id: '99',
-      name: 'Some bike station',
-      lng: 8.3,
-      lat: 4.5,
-      kmToCityCenter: 3.4
-    }, 2)
+    filterDistanceToCenter(3.4, 2)
   ).toBeFalsy();
 });
 

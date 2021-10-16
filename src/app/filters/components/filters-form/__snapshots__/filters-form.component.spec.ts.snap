@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FiltersFormComponent should reset filters 1`] = `
+Object {
+  "kmToCityCenter": 10,
+  "name": "",
+  "onlyWithPicture": false,
+}
+`;

@@ -1,0 +1,48 @@
+<form [formGroup]="filters">
+  <div class="filters__distance-container">
+    <mat-label>
+      Distance to city center (Km.)
+    </mat-label>
+    <div class="filters__distance-controls">
+      <mat-slider
+        class="filters__distance-slider"
+        formControlName="kmToCityCenter"
+        step="0.5"
+        color="primary"
+        max="20"
+      >
+      </mat-slider>
+      <mat-form-field class="filters__distance-field">
+        <input
+          type="number"
+          matInput
+          disabled
+          [value]="filters.get('kmToCityCenter')?.value"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>Station name</mat-label>
+      <input
+        formControlName="name"
+        type="text"
+        matInput
+        placeholder="Station name"/>
+    </mat-form-field>
+  </div>
+  <div class="filters__picture-field">
+    <mat-checkbox formControlName="onlyWithPicture" color="primary">
+      Only stations with picture
+    </mat-checkbox>
+  </div>
+  <div class="filters__form-actions">
+    <button
+      class="filters__reset-btn"
+      mat-raised-button
+      color="primary"
+      (click)="resetFilters()">
+      Reset filter
+    </button>
+  </div>
+</form>
