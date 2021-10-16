@@ -33,4 +33,18 @@ describe('FiltersFormComponent', () => {
       onlyWithPicture: false
     });
   });
+
+  it('should reset filters', () => {
+    component.ngOnInit();
+
+    component.filters.patchValue({
+      kmToCityCenter: 6,
+      name: 'FERR',
+      onlyWithPicture: true
+    });
+
+    component.resetFilters();
+
+    expect(component.filters.value).toMatchSnapshot();
+  });
 });

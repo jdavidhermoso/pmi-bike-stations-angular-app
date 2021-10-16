@@ -1,9 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {Store} from '@ngrx/store';
+import {select, Store} from '@ngrx/store';
 import {AppState} from '../../../models/app.state';
-import {filter} from '../../../state/actions/filters.actions';
+import {filter, resetFilters} from '../../../state/actions/filters.actions';
 import {map} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {BikeStation} from '../../../models/bike-station';
+import {Filters} from '../../../models/filters';
+import {selectBikeStations, selectFilters} from '../../../state/reducers';
 
 @Component({
   selector: 'app-filters-form',
@@ -34,5 +38,11 @@ export class FiltersFormComponent implements OnInit {
           })
         );
       });
+  }
+
+  public resetFilters(): void {
+    this.nameControl.patchValue('');
+    this.onlyWithPictureControl.patchValue(false);
+    this.kmToCityCenterControl.patchValue(10);
   }
 }

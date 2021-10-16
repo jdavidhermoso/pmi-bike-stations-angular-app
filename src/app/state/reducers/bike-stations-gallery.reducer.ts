@@ -52,9 +52,10 @@ export const bikeStationsGalleryReducer = createReducer(
     })
   ),
   on(FiltersActions.filter, (currentState: BikeStationsGalleryState, {payload}) => ({
-    ...currentState,
-    filters: payload,
-  }))
+      ...currentState,
+      filters: payload,
+    })
+  )
 );
 
 export const filterBikeStations = (bikeStations: BikeStation[], filters: Filters): BikeStation[] => {

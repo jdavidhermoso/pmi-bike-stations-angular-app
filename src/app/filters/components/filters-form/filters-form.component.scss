@@ -3,17 +3,27 @@
   flex-direction: column;
   width: 100%;
 }
+
 .filters__distance-controls {
   display: flex;
 }
+
 .filters__distance-slider {
   width: 100%;
 }
+
 .filters__distance-field {
   width: 50px;
   margin-left: 1rem;
 }
 
 .filters__picture-field {
+  margin-top: 1.25em;
+}
+.filters__form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.filters__reset-btn {
   margin-top: 1.25em;
 }
