@@ -61,12 +61,12 @@ export const filterBikeStations = (bikeStations: BikeStation[], filters: Filters
   return bikeStations.filter(
     (bikeStation: BikeStation) =>
       filterBikeStationByName(bikeStation.name, filters.name) &&
-      filterDistanceToCenter(bikeStation, filters.kmToCityCenter)
+      filterDistanceToCenter(bikeStation.kmToCityCenter, filters.kmToCityCenter)
   );
 };
 
-export const filterDistanceToCenter = (bikeStation: BikeStation, kmToCityCenter: number) => {
-  return bikeStation.kmToCityCenter <= kmToCityCenter;
+export const filterDistanceToCenter = (bikeStationKmToCityCenter: number, filterKmToCityCenter: number) => {
+  return bikeStationKmToCityCenter <= filterKmToCityCenter;
 };
 
 export const filterBikeStationByName = (bikeStationName: string, nameFilter: string) => {

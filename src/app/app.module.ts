@@ -9,6 +9,7 @@ import {EffectsModule} from '@ngrx/effects';
 import {BikeStationsGalleryEffects} from './state/effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-gallery.module';
+import {FiltersModule} from './filters/filters.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-g
     EffectsModule.forRoot([BikeStationsGalleryEffects]),
     StoreDevtoolsModule.instrument(),
     BrowserAnimationsModule,
-    BikeStationsGalleryModule
+    BikeStationsGalleryModule,
+    FiltersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
