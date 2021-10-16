@@ -1,4 +1,4 @@
-import {Action, createReducer, createSelector, on} from '@ngrx/store';
+import {createReducer, createSelector, on} from '@ngrx/store';
 import * as BikeStationsListActions from '../actions/bike-stations-list.actions';
 import * as FiltersActions from '../actions/filters.actions';
 import {AppState} from '../../models/app.state';

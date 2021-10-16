@@ -1,13 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {AppState} from '../../../models/app.state';
-import {filter, resetFilters} from '../../../state/actions/filters.actions';
-import {map} from 'rxjs/operators';
-import {Observable} from 'rxjs';
-import {BikeStation} from '../../../models/bike-station';
-import {Filters} from '../../../models/filters';
-import {selectBikeStations, selectFilters} from '../../../state/reducers';
+import {filter} from '../../../state/actions/filters.actions';
 
 @Component({
   selector: 'app-filters-form',

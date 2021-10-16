@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CardComponent} from './components';
-import { PageHeaderComponent } from './components/page-header/page-header.component';
+import {PageHeaderComponent} from './components/page-header/page-header.component';
 
 
 @NgModule({
