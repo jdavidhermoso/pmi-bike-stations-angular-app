@@ -12,6 +12,8 @@ import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-g
 import {FiltersModule} from './filters/filters.module';
 import {SidenavModule} from './sidenav/sidenav.module';
 import {HeaderModule} from './header/header.module';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app.routing/app.routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {HeaderModule} from './header/header.module';
     BikeStationsGalleryModule,
     FiltersModule,
     SidenavModule,
-    HeaderModule
+    HeaderModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

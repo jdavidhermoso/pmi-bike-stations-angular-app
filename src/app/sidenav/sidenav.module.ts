@@ -8,6 +8,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {HeaderModule} from '../header/header.module';
 import {MatListModule} from '@angular/material/list';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -26,7 +27,8 @@ import {MatListModule} from '@angular/material/list';
     MatSelectModule,
     MatButtonModule,
     HeaderModule,
-    MatListModule
+    MatListModule,
+    RouterModule
   ]
 })
 export class SidenavModule { }
