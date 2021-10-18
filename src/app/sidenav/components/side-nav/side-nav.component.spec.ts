@@ -1,6 +1,7 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {SideNavComponent} from './side-nav.component';
+import {of, Subject} from 'rxjs';
 
 
 describe('SideNavComponent', () => {
@@ -8,7 +9,10 @@ describe('SideNavComponent', () => {
     const deviceDetectorMock = {
       isDesktop: () => true
     };
-    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any);
+    const routerMock = {
+      events: of(true)
+    };
+    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any, routerMock as any);
 
     expect(component.isDesktopDevice).toBeTruthy();
   });
@@ -17,7 +21,10 @@ describe('SideNavComponent', () => {
     const deviceDetectorMock = {
       isDesktop: () => false
     };
-    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any);
+    const routerMock = {
+      events: of(true)
+    };
+    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any, routerMock as any);
 
     expect(component.isDesktopDevice).toBeFalsy();
   });
@@ -26,7 +33,10 @@ describe('SideNavComponent', () => {
     const deviceDetectorMock = {
       isDesktop: () => false
     };
-    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any);
+    const routerMock = {
+      events: of(true)
+    };
+    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any, routerMock as any);
     it('toggleSideNav: should set isSideNaveOpen to falsy', () => {
       component.isSideNaveOpen = true;
 
@@ -47,12 +57,34 @@ describe('SideNavComponent', () => {
     const deviceDetectorMock = {
       isDesktop: () => false
     };
-    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any);
+    const routerMock = {
+      events: of(true)
+    };
+    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any, routerMock as any);
 
     component.isSideNaveOpen = true;
 
     component.onBackdropClicked();
 
     expect(component.isSideNaveOpen).toBeFalsy();
+  });
+
+  it('router events: should set isSideNaveOpen to false', done => {
+    const navigationEvent: Subject<void> = new Subject();
+
+    const deviceDetectorMock = {
+      isDesktop: () => false
+    };
+    const routerMock = {
+      events: navigationEvent
+    };
+    const component: SideNavComponent = new SideNavComponent(deviceDetectorMock as any, routerMock as any);
+    component.isSideNaveOpen = true;
+
+    routerMock.events.subscribe(() => {
+      expect(component.isSideNaveOpen).toBeFalsy();
+      done();
+    });
+    navigationEvent.next();
   });
 });
