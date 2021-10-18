@@ -16,8 +16,7 @@ export interface BikeStationsGalleryState {
 
 const initialFiltersState: Filters = {
   name: '',
-  kmToCityCenter: 10,
-  onlyWithPicture: false
+  kmToCityCenter: 20
 };
 
 export const initialBikeStationsState: BikeStationsGalleryState = {

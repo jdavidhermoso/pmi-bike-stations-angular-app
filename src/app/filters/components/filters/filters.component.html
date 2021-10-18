@@ -1,5 +1,7 @@
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel
+    [hideToggle]="isDesktopDevice"
+    [expanded]="isDesktopDevice">
     <mat-expansion-panel-header>
       <mat-panel-title>
         Filter stations

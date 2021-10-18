@@ -31,18 +31,21 @@
         placeholder="Station name"/>
     </mat-form-field>
   </div>
-  <div class="filters__picture-field">
-    <mat-checkbox formControlName="onlyWithPicture" color="primary">
-      Only stations with picture
-    </mat-checkbox>
-  </div>
   <div class="filters__form-actions">
     <button
       class="filters__reset-btn"
       mat-raised-button
       color="primary"
       (click)="resetFilters()">
-      Reset filter
+      Reset filters
+    </button>
+    <button
+      *ngIf="!isDesktopDevice"
+      class="filters__apply-btn"
+      mat-raised-button
+      color="primary"
+      (click)="applyFilters()">
+      Apply filters
     </button>
   </div>
 </form>
