@@ -1,4 +1,6 @@
-<div class="app__container">
-  <app-filters></app-filters>
-  <app-bike-stations-list></app-bike-stations-list>
+<div class="app__container" [ngClass]="{'desktop-device' : isDesktopDevice}">
+  <div class="filters">
+    <app-filters></app-filters>
+  </div>
+  <app-bike-stations-list class="bike__stations-list"></app-bike-stations-list>
 </div>

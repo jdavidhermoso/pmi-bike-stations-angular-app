@@ -1,10 +1,19 @@
 <div>
-  <ng-container *ngIf="(bikeStations | async) as bikeStations;else nodata">
-    <div *ngFor="let bikeStation of bikeStations">
-      {{bikeStation.name}}
-    </div>
+  <h2>
+    Bike stations
+  </h2>
+  <ng-container *ngIf="(bikeStations | async) as bikeStations">
+    <ng-container *ngIf="bikeStations.length;else nodata">
+      <div class="bike__stations-list-container">
+        <app-bike-station-card
+          *ngFor="let bikeStation of bikeStations"
+          [bikeStation]="bikeStation"
+          class="bike__station-card">
+        </app-bike-station-card>
+      </div>
+    </ng-container>
   </ng-container>
 </div>
 <ng-template #nodata>
-  There's no data to show
+  There are no stations matching filters criteria
 </ng-template>

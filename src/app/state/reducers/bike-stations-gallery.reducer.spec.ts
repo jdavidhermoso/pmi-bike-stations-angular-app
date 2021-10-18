@@ -30,8 +30,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          kmToCityCenter: 10,
-          onlyWithPicture: false,
+          kmToCityCenter: 20,
           name: ''
         }
       };
@@ -53,8 +52,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          kmToCityCenter: 10,
-          onlyWithPicture: false,
+          kmToCityCenter: 20,
           name: 'VALLDEMOSSA'
         }
       };
@@ -93,9 +91,8 @@ describe('bikeStationsGalleryReducer', () => {
           ]
         },
         filters: {
-          kmToCityCenter: 10,
-          name: '',
-          onlyWithPicture: false
+          kmToCityCenter: 20,
+          name: ''
         }
       }
     };
@@ -109,8 +106,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          onlyWithPicture: false,
-          kmToCityCenter: 10,
+          kmToCityCenter: 20,
           name: ''
         }
       }
@@ -141,7 +137,7 @@ it('filterBikeStations: should return only one bike station', () => {
         name: 'PLAÇA PONT',
         lng: 2.633678,
         lat: 39.570342,
-        kmToCityCenter: 10
+        kmToCityCenter: 20
       },
       {
         img: '001.jpeg',
@@ -163,8 +159,7 @@ it('filterBikeStations: should return only one bike station', () => {
       }
     ], {
       kmToCityCenter: 5,
-      name: 'SON FORTEZA',
-      onlyWithPicture: false
+      name: 'SON FORTEZA'
     })
   ).toMatchSnapshot();
 });

@@ -3,41 +3,51 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../../models/app.state';
 import {filter} from '../../../state/actions/filters.actions';
+import {DeviceDetectorService} from 'ngx-device-detector';
+import {initialBikeStationsState} from '../../../state/reducers';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-filters-form',
   templateUrl: './filters-form.component.html',
   styleUrls: ['./filters-form.component.scss']
 })
-export class FiltersFormComponent implements OnInit {
-  public kmToCityCenterControl: FormControl = new FormControl(10);
-  public nameControl: FormControl = new FormControl('');
-  public onlyWithPictureControl: FormControl = new FormControl(false);
+export class FiltersFormComponent {
+  public kmToCityCenterControl: FormControl = new FormControl(initialBikeStationsState.filters.kmToCityCenter);
+  public nameControl: FormControl = new FormControl(initialBikeStationsState.filters.name);
   public filters: FormGroup = new FormGroup({
     kmToCityCenter: this.kmToCityCenterControl,
     name: this.nameControl,
-    onlyWithPicture: this.onlyWithPictureControl
   });
+  public isDesktopDevice = false;
+  private filterFormValueChangesSubscription: Subscription | undefined;
 
-  constructor(private store: Store<AppState>) {
-  }
-
-  ngOnInit(): void {
-    this.filters.valueChanges
-      .subscribe(() => {
-        this.store.dispatch(filter({
-            payload: {
-              ...this.filters.value,
-              onlyWithPicture: false,
-            }
-          })
-        );
-      });
+  constructor(private store: Store<AppState>, private deviceService: DeviceDetectorService) {
+    this.isDesktopDevice = deviceService.isDesktop();
+    if (this.isDesktopDevice) {
+      this.filterFormValueChangesSubscription = this.filters.valueChanges
+        .subscribe(() => {
+          this.applyFilters();
+        });
+    }
   }
 
   public resetFilters(): void {
-    this.nameControl.patchValue('');
-    this.onlyWithPictureControl.patchValue(false);
-    this.kmToCityCenterControl.patchValue(10);
+    const initialFiltersState = initialBikeStationsState.filters;
+    this.nameControl.patchValue(initialFiltersState.name);
+    this.kmToCityCenterControl.patchValue(initialFiltersState.kmToCityCenter);
+
+    if (!this.isDesktopDevice) {
+      this.applyFilters();
+    }
+  }
+
+  public applyFilters(): void {
+    this.store.dispatch(filter({
+        payload: {
+          ...this.filters.value
+        }
+      })
+    );
   }
 }

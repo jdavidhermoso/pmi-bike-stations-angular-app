@@ -132,7 +132,7 @@
     "name": "FÁBRICA",
     "lng": 2.637383938,
     "lat": 39.57274848,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 8
   },
   {
     "img": "001.jpeg",
@@ -141,7 +141,7 @@
     "name": "JAUME III",
     "lng": 2.642920017,
     "lat": 39.57247557,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1.6
   },
   {
     "img": "001.jpeg",
@@ -150,7 +150,7 @@
     "name": "PL PORTA S CATALINA",
     "lng": 2.641439438,
     "lat": 39.57113582,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1.7
   },
   {
     "img": "001.jpeg",
@@ -159,7 +159,7 @@
     "name": "PL DE LA REINA",
     "lng": 2.645848989,
     "lat": 39.56797655,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1.4
   },
   {
     "img": "001.jpeg",
@@ -168,7 +168,7 @@
     "name": "PL. SANTA EULALIA",
     "lng": 2.650655508,
     "lat": 39.56914268,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1
   },
   {
     "img": "001.jpeg",
@@ -177,7 +177,7 @@
     "name": "PARC DE ESTACIONS",
     "lng": 2.655408382,
     "lat": 39.57602331,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 0.2
   },
   {
     "img": "001.jpeg",
@@ -186,7 +186,7 @@
     "name": "J VERDAGUER-J BALMES",
     "lng": 2.659850121,
     "lat": 39.58015797,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 0.3
   },
   {
     "img": "001.jpeg",
@@ -195,7 +195,7 @@
     "name": "PL. DESPANYA",
     "lng": 2.654550076,
     "lat": 39.57543616,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 0.1
   },
   {
     "img": "001.jpeg",
@@ -204,7 +204,7 @@
     "name": "PL ALEXANDRE JAUME",
     "lng": 2.655934095,
     "lat": 39.57226055,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 3.2
   },
   {
     "img": "001.jpeg",
@@ -213,7 +213,7 @@
     "name": "PARC DE SA RIERA",
     "lng": 2.644529343,
     "lat": 39.5815637,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 8.4
   },
   {
     "img": "001.jpeg",
@@ -222,7 +222,7 @@
     "name": "BLANQUERNA-SALLENT",
     "lng": 2.651245594,
     "lat": 39.57809894,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 3.6
   },
   {
     "img": "001.jpeg",
@@ -231,7 +231,7 @@
     "name": "PL. PARIS",
     "lng": 2.649158,
     "lat": 39.584186,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 2.5
   },
   {
     "img": "001.jpeg",
@@ -240,7 +240,7 @@
     "name": "BLANQUERNA BARTOLOMÉ",
     "lng": 2.649260759,
     "lat": 39.58085257,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1.7
   },
   {
     "img": "001.jpeg",
@@ -249,7 +249,7 @@
     "name": "METGE DARDER",
     "lng": 2.667289,
     "lat": 39.577219,
-    "kmToCityCenter": 10
+    "kmToCityCenter": 1.5
   },
   {
     "img": "001.jpeg",
