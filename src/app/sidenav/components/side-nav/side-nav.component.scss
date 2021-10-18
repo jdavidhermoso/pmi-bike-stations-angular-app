@@ -1,0 +1,29 @@
+.side-nav__container {
+  width: 100%;
+  height: 100%;
+}
+
+mat-drawer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.side-nav__drawer {
+  width: 100%;
+  top: 50px;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+}
+
+.side-nav__drawer.desktop-device {
+  width: 30%;
+}
+
+.side-nav__item {
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

@@ -10,6 +10,8 @@ import {BikeStationsGalleryEffects} from './state/effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-gallery.module';
 import {FiltersModule} from './filters/filters.module';
+import {SidenavModule} from './sidenav/sidenav.module';
+import {HeaderModule} from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import {FiltersModule} from './filters/filters.module';
     StoreDevtoolsModule.instrument(),
     BrowserAnimationsModule,
     BikeStationsGalleryModule,
-    FiltersModule
+    FiltersModule,
+    SidenavModule,
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
