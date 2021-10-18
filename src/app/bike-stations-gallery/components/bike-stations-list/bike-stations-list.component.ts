@@ -5,7 +5,6 @@ import {getBikeStationsStart} from '../../../state/actions';
 import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
-import {DeviceDetectorService} from 'ngx-device-detector';
 
 @Component({
   selector: 'app-bike-stations-list',

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BikeStationsMapComponent centerCoords 1`] = `
+Object {
+  "lat": 39.57567,
+  "lng": 2.65402,
+}
+`;
