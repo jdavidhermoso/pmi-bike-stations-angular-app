@@ -2,8 +2,15 @@
 
 .app__container {
   display: flex;
+  position: absolute;
+  top: 50px;
+  left: 0;
   flex-direction: column;
-  padding: $standard-size;
+  width: calc(100% - 2rem);
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
 .filters {

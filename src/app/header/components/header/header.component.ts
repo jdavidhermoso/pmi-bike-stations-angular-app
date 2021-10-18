@@ -1,0 +1,15 @@
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
+})
+export class HeaderComponent {
+  @Output()
+  public toggleSideNavEvent: EventEmitter<void> = new EventEmitter<void>();
+
+  public toggleSideNav(): void {
+    this.toggleSideNavEvent.emit();
+  }
+}
