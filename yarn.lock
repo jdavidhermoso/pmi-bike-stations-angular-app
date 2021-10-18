@@ -232,6 +232,14 @@
   dependencies:
     tslib "^2.2.0"
 
+"@angular/google-maps@^12.2.10":
+  version "12.2.10"
+  resolved "https://registry.yarnpkg.com/@angular/google-maps/-/google-maps-12.2.10.tgz#a76f09e6c1cf87030d9303ac3b7b53e51b7f569e"
+  integrity sha512-rhT/AEAjY9gw0mReYH4Gq7VUEQT/kovNNNQ/ou4/iSg8rek/+e+84KELMW8JMJx6HMfPG4+ltv6gn+DTfNV6dA==
+  dependencies:
+    "@types/googlemaps" "^3.43.1"
+    tslib "^2.2.0"
+
 "@angular/material@12.2.9":
   version "12.2.9"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-12.2.9.tgz#b4a1e138c7fd2341bd27aa6012b4738f61b5ad2d"
@@ -1916,6 +1924,11 @@
   dependencies:
     "@types/minimatch" "*"
     "@types/node" "*"
+
+"@types/googlemaps@^3.43.1":
+  version "3.43.3"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.43.3.tgz#70cf962154a160fe78bcd69d6ccc296dd9175b1f"
+  integrity sha512-ZWNoz/O8MPEpiajvj7QiqCY8tTLFNqNZ/a+s+zTV58wFVNAvvqV4bdGfnsjTb5Cs4V6wEsLrX8XRhmnyYJ2Tdg==
 
 "@types/graceful-fs@^4.1.2":
   version "4.1.4"
