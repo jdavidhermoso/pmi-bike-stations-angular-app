@@ -1,6 +1,11 @@
 <mat-card class="bike__station-card">
   <mat-card-title> {{ bikeStation?.name }} </mat-card-title>
   <mat-card-subtitle>
-    Kilometers to city center: {{ bikeStation?.kmToCityCenter }}
+    <p>
+      {{ bikeStation?.street}}, {{bikeStation?.streetNumber}}. {{bikeStation?.cp}}
+    </p>
+    <p>
+      {{bikeStation?.town}}
+    </p>
   </mat-card-subtitle>
 </mat-card>
