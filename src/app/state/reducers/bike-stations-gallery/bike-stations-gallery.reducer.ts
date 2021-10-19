@@ -15,8 +15,7 @@ export interface BikeStationsGalleryState {
 }
 
 const initialFiltersState: Filters = {
-  name: '',
-  kmToCityCenter: 20
+  search: ''
 };
 
 export const initialBikeStationsState: BikeStationsGalleryState = {
@@ -59,16 +58,13 @@ export const bikeStationsGalleryReducer = createReducer(
 
 export const filterBikeStations = (bikeStations: BikeStation[], filters: Filters): BikeStation[] => {
   return bikeStations.filter(
-    (bikeStation: BikeStation) =>
-      filterBikeStationByName(bikeStation.name, filters.name) &&
-      filterDistanceToCenter(bikeStation.kmToCityCenter, filters.kmToCityCenter)
+    (bikeStation: BikeStation) => filterBikeStationByNameOrAddress(bikeStation.name, bikeStation.fullAddress, filters.search)
   );
 };
 
-export const filterDistanceToCenter = (bikeStationKmToCityCenter: number, filterKmToCityCenter: number) => {
-  return bikeStationKmToCityCenter <= filterKmToCityCenter;
-};
-
-export const filterBikeStationByName = (bikeStationName: string, nameFilter: string) => {
-  return bikeStationName.toLowerCase().indexOf(nameFilter.toLowerCase()) > -1;
+export const filterBikeStationByNameOrAddress = (bikeStationName: string,
+                                                 bikeStationAddress: string,
+                                                 searchFilter: string) => {
+  return (bikeStationName.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1) ||
+    bikeStationAddress.toLowerCase().indexOf(searchFilter.toLowerCase()) > -1;
 };

@@ -10,12 +10,30 @@ describe('FiltersFormComponent', () => {
       dispatch: jest.fn(),
       pipe: jest.fn(() => of([
         {
-          img: '003.jpeg',
-          type: 'anchor',
-          id: '01',
-          name: 'PLAÇA DELS PATINS',
-          lng: 2.659399509,
-          lat: 39.56590061
+          img: null,
+          id: '09',
+          name: 'F. MANUEL HERREROS',
+          lng: 2.664034367,
+          lat: 39.57458439,
+          fullAddress: 'Francesc Manuel de los Herreros, 32 07005 Palma, Illes Balears',
+          street: 'Francesc Manuel de los Herreros',
+          streetNumber: 32,
+          cp: '07005',
+          town: 'Palma',
+          region: 'Illes Balears'
+        },
+        {
+          img: null,
+          id: '41',
+          name: 'FÁBRICA',
+          lng: 2.637383938,
+          lat: 39.57274848,
+          fullAddress: 'Comte de Barcelona, 25, 07013 Palma, Illes Balears',
+          street: 'Comte de Barcelona',
+          streetNumber: 25,
+          cp: '07013',
+          town: 'Palma',
+          region: 'Illes Balears'
         }
       ]))
     };
@@ -31,7 +49,6 @@ describe('FiltersFormComponent', () => {
       });
 
       component.filters.patchValue({
-        kmToCityCenter: 9,
         name: 'sant',
       });
     });
@@ -56,12 +73,30 @@ describe('FiltersFormComponent', () => {
       dispatch: jest.fn(),
       pipe: jest.fn(() => of([
         {
-          img: '003.jpeg',
-          type: 'anchor',
-          id: '01',
-          name: 'PLAÇA DELS PATINS',
-          lng: 2.659399509,
-          lat: 39.56590061
+          img: null,
+          id: '47',
+          name: 'PL PORTA S CATALINA',
+          lng: 2.641439438,
+          lat: 39.57113582,
+          fullAddress: 'Porta de Santa Catalina, 17, 07012 Palma, Illes Balears',
+          street: 'Jaume III',
+          streetNumber: 17,
+          cp: '07012',
+          town: 'Palma',
+          region: 'Illes Balears'
+        },
+        {
+          img: null,
+          id: '49',
+          name: 'PL DE LA REINA',
+          lng: 2.645848989,
+          lat: 39.56797655,
+          fullAddress: 'Antoni Maura, 10, 07012 Palma, Illes Balears',
+          street: 'Antoni Maura',
+          streetNumber: 10,
+          cp: '07012',
+          town: 'Palma',
+          region: 'Illes Balears'
         }
       ]))
     };
@@ -77,7 +112,6 @@ describe('FiltersFormComponent', () => {
       });
 
       component.filters.patchValue({
-        kmToCityCenter: 9,
         name: 'sant',
       });
     });
@@ -90,12 +124,17 @@ describe('FiltersFormComponent', () => {
       dispatch: jest.fn(),
       pipe: jest.fn(() => of([
         {
-          img: '003.jpeg',
-          type: 'anchor',
-          id: '01',
-          name: 'PLAÇA DELS PATINS',
-          lng: 2.659399509,
-          lat: 39.56590061
+          img: null,
+          id: '49',
+          name: 'PL DE LA REINA',
+          lng: 2.645848989,
+          lat: 39.56797655,
+          fullAddress: 'Antoni Maura, 10, 07012 Palma, Illes Balears',
+          street: 'Antoni Maura',
+          streetNumber: 10,
+          cp: '07012',
+          town: 'Palma',
+          region: 'Illes Balears'
         }
       ]))
     };

@@ -17,13 +17,17 @@ describe('StationInfoDrawerComponent', () => {
 
   it('getDirectionsHref: should return url', () => {
     component.bikeStation = {
-      img: '003.jpeg',
-      type: 'anchor',
-      id: '01',
-      name: 'PLAÇA DELS PATINS',
-      lng: 2.659399509,
-      lat: 39.56590061,
-      kmToCityCenter: 90
+      img: null,
+      id: '77',
+      name: 'SON COSTA - SON FORTEZA',
+      lng: 2.6661,
+      lat: 39.584114,
+      fullAddress: 'Argelaga, 26, 07005 Palma, Illes Balears',
+      street: 'Argelaga',
+      streetNumber: 26,
+      cp: '07005',
+      town: 'Palma',
+      region: 'Illes Balears'
     };
 
     expect(component.getDirectionsHref()).toMatchSnapshot();

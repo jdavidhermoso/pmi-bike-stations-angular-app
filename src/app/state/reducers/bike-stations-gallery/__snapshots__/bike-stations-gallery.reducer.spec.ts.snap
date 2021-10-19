@@ -3,13 +3,17 @@
 exports[`filterBikeStations: should return only one bike station 1`] = `
 Array [
   Object {
+    "cp": "07005",
+    "fullAddress": "Argelaga, 26, 07005 Palma, Illes Balears",
     "id": "77",
-    "img": "001.jpeg",
-    "kmToCityCenter": 4,
+    "img": null,
     "lat": 39.584114,
     "lng": 2.6661,
     "name": "SON COSTA - SON FORTEZA",
-    "type": "anchor",
+    "region": "Illes Balears",
+    "street": "Argelaga",
+    "streetNumber": 26,
+    "town": "Palma",
   },
 ]
 `;

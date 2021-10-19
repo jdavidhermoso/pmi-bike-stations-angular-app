@@ -1,9 +1,8 @@
 import * as fromBikeStationsGallery from './bike-stations-gallery.reducer';
 import {
   BikeStationsGalleryState,
-  filterBikeStationByName,
+  filterBikeStationByNameOrAddress,
   filterBikeStations,
-  filterDistanceToCenter
 } from './bike-stations-gallery.reducer';
 import {getBikeStationsSuccess} from '../../actions';
 import {AppState} from '../../../models/app.state';
@@ -30,8 +29,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          kmToCityCenter: 20,
-          name: ''
+          search: ''
         }
       };
 
@@ -52,8 +50,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          kmToCityCenter: 20,
-          name: 'VALLDEMOSSA'
+          search: 'VALLDEMOSSA'
         }
       };
 
@@ -70,29 +67,37 @@ describe('bikeStationsGalleryReducer', () => {
     const appState: AppState = {
       bikeStationsGallery: {
         bikeStations: {
-          stations: [{
-            img: '001.jpeg',
-            type: 'anchor',
-            id: '21',
-            name: 'PALEXANDER FLEMING',
-            lng: 2.655279636,
-            lat: 39.58131563,
-            kmToCityCenter: 3.5
-          },
+          stations: [
             {
-              img: '001.jpeg',
-              type: 'anchor',
-              id: '31',
-              name: 'PL. MADRID',
-              lng: 2.641010284,
-              lat: 39.57718104,
-              kmToCityCenter: 4
+              img: '',
+              id: '16',
+              name: 'PARC DE SA RIERA',
+              lng: 2.644529343,
+              lat: 39.5815637,
+              fullAddress: 'Jesus, 21, 07010 Palma, Islas Baleares',
+              street: 'Jesus',
+              streetNumber: 21,
+              cp: '07010',
+              town: 'Palma',
+              region: 'Illes Balears'
+            },
+            {
+              img: null,
+              id: '24',
+              name: 'BLANQUERNA-SALLENT',
+              lng: 2.651245594,
+              lat: 39.57809894,
+              fullAddress: 'Blanquerna, 2, 07003 Palma, Islas Baleares',
+              street: 'Blanquerna',
+              streetNumber: 2,
+              cp: '07003',
+              town: 'Palma',
+              region: 'Illes Balears'
             }
           ]
         },
         filters: {
-          kmToCityCenter: 20,
-          name: ''
+          search: ''
         }
       },
       bikeStationsMap: {
@@ -109,8 +114,7 @@ describe('bikeStationsGalleryReducer', () => {
           stations: []
         },
         filters: {
-          kmToCityCenter: 20,
-          name: ''
+          search: ''
         }
       },
       bikeStationsMap: {
@@ -121,15 +125,9 @@ describe('bikeStationsGalleryReducer', () => {
   });
 });
 
-it('filterDistanceToCenter: should return falsy because bike station is filtered', () => {
-  expect(
-    filterDistanceToCenter(3.4, 2)
-  ).toBeFalsy();
-});
-
 it('filterBikeStationByName: should return truthy because bike station name matches filter name', () => {
   expect(
-    filterBikeStationByName('Some bike station', 'sOmE')
+    filterBikeStationByNameOrAddress('Some bike station', 'Jesus, 21, 07010 Palma, Islas Baleares', 'jesus')
   ).toBeTruthy();
 });
 
@@ -137,35 +135,46 @@ it('filterBikeStations: should return only one bike station', () => {
   expect(
     filterBikeStations([
       {
-        img: '001.jpeg',
-        type: 'anchor',
-        id: '61',
-        name: 'PLAÇA PONT',
-        lng: 2.633678,
-        lat: 39.570342,
-        kmToCityCenter: 20
+        img: null,
+        id: '16',
+        name: 'PARC DE SA RIERA',
+        lng: 2.644529343,
+        lat: 39.5815637,
+        fullAddress: 'Jesus, 21, 07010 Palma, Islas Baleares',
+        street: 'Jesus',
+        streetNumber: 21,
+        cp: '07010',
+        town: 'Palma',
+        region: 'Illes Balears'
       },
       {
-        img: '001.jpeg',
-        type: 'anchor',
-        id: '70',
-        name: 'CTRA. VALLDEMOSSA',
-        lng: 2.650011,
-        lat: 39.587861,
-        kmToCityCenter: 8
+        img: null,
+        id: '24',
+        name: 'BLANQUERNA-SALLENT',
+        lng: 2.651245594,
+        lat: 39.57809894,
+        fullAddress: 'Blanquerna, 2, 07003 Palma, Islas Baleares',
+        street: 'Blanquerna',
+        streetNumber: 2,
+        cp: '07003',
+        town: 'Palma',
+        region: 'Illes Balears'
       },
       {
-        img: '001.jpeg',
-        type: 'anchor',
+        img: null,
         id: '77',
         name: 'SON COSTA - SON FORTEZA',
         lng: 2.6661,
         lat: 39.584114,
-        kmToCityCenter: 4
+        fullAddress: 'Argelaga, 26, 07005 Palma, Illes Balears',
+        street: 'Argelaga',
+        streetNumber: 26,
+        cp: '07005',
+        town: 'Palma',
+        region: 'Illes Balears'
       }
     ], {
-      kmToCityCenter: 5,
-      name: 'SON FORTEZA'
+      search: 'SON FORTEZA'
     })
   ).toMatchSnapshot();
 });

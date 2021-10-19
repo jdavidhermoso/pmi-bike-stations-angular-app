@@ -13,11 +13,9 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./filters-form.component.scss']
 })
 export class FiltersFormComponent {
-  public kmToCityCenterControl: FormControl = new FormControl(initialBikeStationsState.filters.kmToCityCenter);
-  public nameControl: FormControl = new FormControl(initialBikeStationsState.filters.name);
+  public searchControl: FormControl = new FormControl(initialBikeStationsState.filters.search);
   public filters: FormGroup = new FormGroup({
-    kmToCityCenter: this.kmToCityCenterControl,
-    name: this.nameControl,
+    search: this.searchControl,
   });
   public isDesktopDevice = false;
   private filterFormValueChangesSubscription: Subscription | undefined;
@@ -34,8 +32,7 @@ export class FiltersFormComponent {
 
   public resetFilters(): void {
     const initialFiltersState = initialBikeStationsState.filters;
-    this.nameControl.patchValue(initialFiltersState.name);
-    this.kmToCityCenterControl.patchValue(initialFiltersState.kmToCityCenter);
+    this.searchControl.patchValue(initialFiltersState.search);
 
     if (!this.isDesktopDevice) {
       this.applyFilters();

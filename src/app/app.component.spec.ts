@@ -8,13 +8,17 @@ const deviceDetectorMock = {
 
 describe('AppComponent', () => {
   const bikeStation: BikeStation = {
-    img: '003.jpeg',
-    type: 'anchor',
-    id: '01',
-    name: 'PLAÇA DELS PATINS',
-    lng: 2.659399509,
-    lat: 39.56590061,
-    kmToCityCenter: 3
+    img: null,
+    id: '32',
+    name: 'PLAÇA BARCELONA',
+    lng: 2.639351,
+    lat: 39.580072,
+    fullAddress: 'Plaça de Barcelona, 7, 07011 Palma, Illes Balears',
+    street: 'Plaça de Barcelona',
+    streetNumber: 7,
+    cp: '07011',
+    town: 'Palma',
+    region: 'Illes Balears'
   };
   let component: AppComponent;
   const mockStore = {
