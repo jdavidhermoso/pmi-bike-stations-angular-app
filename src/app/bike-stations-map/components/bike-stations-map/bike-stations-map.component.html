@@ -14,4 +14,10 @@
     [title]="bikeStation.name"
     (mapClick)="onMarkerClick(bikeStation)"
   ></map-marker>
+  <map-kml-layer url="https://carrilbicipalma.com/assets/bikes_lanes.kml" [options]="{
+        suppressInfoWindows: true,
+        preserveViewport: true
+        }">
+
+  </map-kml-layer>
 </google-map>
