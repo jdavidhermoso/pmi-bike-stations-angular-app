@@ -8,7 +8,8 @@
         <app-bike-station-card
           *ngFor="let bikeStation of bikeStations"
           [bikeStation]="bikeStation"
-          class="bike__station-card">
+          class="bike__station-card"
+          (click)="onBikeStationCardClicked(bikeStation)">
         </app-bike-station-card>
       </div>
     </ng-container>

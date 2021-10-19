@@ -5,9 +5,9 @@ import {
   filterBikeStations,
   filterDistanceToCenter
 } from './bike-stations-gallery.reducer';
-import {getBikeStationsSuccess} from '../actions';
-import {AppState} from '../../models/app.state';
-import {filter} from '../actions/filters.actions';
+import {getBikeStationsSuccess} from '../../actions';
+import {AppState} from '../../../models/app.state';
+import {filter} from '../../actions/filters.actions';
 
 describe('bikeStationsGalleryReducer', () => {
   describe('unknown action', () => {
@@ -94,7 +94,10 @@ describe('bikeStationsGalleryReducer', () => {
           kmToCityCenter: 20,
           name: ''
         }
-      }
+      },
+      bikeStationsMap: {
+        selectedBikeStation: undefined
+      },
     };
     expect(fromBikeStationsGallery.selectBikeStationsGalleryState(appState)).toStrictEqual(appState.bikeStationsGallery);
   });
@@ -109,7 +112,10 @@ describe('bikeStationsGalleryReducer', () => {
           kmToCityCenter: 20,
           name: ''
         }
-      }
+      },
+      bikeStationsMap: {
+        selectedBikeStation: undefined
+      },
     };
     expect(fromBikeStationsGallery.selectBikeStations(appState)).toStrictEqual(appState.bikeStationsGallery.bikeStations.stations);
   });

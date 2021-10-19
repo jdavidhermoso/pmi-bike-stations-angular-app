@@ -10,6 +10,7 @@
 .bike__station-card {
   display: block;
   margin-bottom: 1.5rem;
+  cursor: pointer;
 }
 
 :host-context(.desktop-device) .bike__stations-list-container {

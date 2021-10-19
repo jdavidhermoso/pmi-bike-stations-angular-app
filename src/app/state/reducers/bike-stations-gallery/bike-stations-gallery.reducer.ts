@@ -1,9 +1,9 @@
 import {createReducer, createSelector, on} from '@ngrx/store';
-import * as BikeStationsListActions from '../actions/bike-stations-list.actions';
-import * as FiltersActions from '../actions/filters.actions';
-import {AppState} from '../../models/app.state';
-import {BikeStation} from '../../models/bike-station';
-import {Filters} from '../../models/filters';
+import * as BikeStationsListActions from '../../actions/bike-stations-list.actions';
+import * as FiltersActions from '../../actions/filters.actions';
+import {AppState} from '../../../models/app.state';
+import {BikeStation} from '../../../models/bike-station';
+import {Filters} from '../../../models/filters';
 
 export interface BikeStationsState {
   stations: BikeStation[];

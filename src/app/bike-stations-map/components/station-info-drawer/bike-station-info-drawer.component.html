@@ -1,0 +1,27 @@
+<mat-drawer-container
+  class="bike__station-info-drawer-container"
+  [ngClass]="{
+  'open' : !!bikeStation,
+  'desktop-device' : isDesktopDevice
+  }">
+  <mat-drawer
+    class="bike__station-info-drawer"
+    mode="over" [opened]="!!bikeStation"
+  >
+    <div class="drawer__header">
+      <h2>
+        {{ bikeStation?.name }}
+      </h2>
+      <mat-icon
+        class="drawer__close-btn"
+        (click)="closeInfoDrawer.emit()">close
+      </mat-icon>
+    </div>
+    <div class="drawer__body">
+      <div class="drawer__actions">
+        <app-drawer-action-btn
+          [routeHref]="getDirectionsHref()"></app-drawer-action-btn>
+      </div>
+    </div>
+  </mat-drawer>
+</mat-drawer-container>
