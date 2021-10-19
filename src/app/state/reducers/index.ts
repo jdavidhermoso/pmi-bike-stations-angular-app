@@ -1,1 +1,1 @@
-export * from './bike-stations-gallery.reducer';
+export * from './bike-stations-gallery';

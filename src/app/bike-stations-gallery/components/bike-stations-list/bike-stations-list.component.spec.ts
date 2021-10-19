@@ -22,6 +22,20 @@ describe('BikeStationsListComponent', () => {
   });
 
   it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should dispatch showBikeStationInfo', () => {
+    component.onBikeStationCardClicked({
+      kmToCityCenter: 8,
+      name: 'Some bike station',
+      img: '',
+      type: '',
+      id: '300',
+      lng: 3.3998,
+      lat: 2.3273
+    });
+
     expect(mockStore.dispatch).toHaveBeenCalled();
   });
 });

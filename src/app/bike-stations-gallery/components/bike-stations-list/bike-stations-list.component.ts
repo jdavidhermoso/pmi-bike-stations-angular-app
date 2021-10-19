@@ -5,6 +5,7 @@ import {getBikeStationsStart} from '../../../state/actions';
 import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
+import {showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
 
 @Component({
   selector: 'app-bike-stations-list',
@@ -15,7 +16,12 @@ export class BikeStationsListComponent {
   public bikeStations: Observable<BikeStation[]>;
 
   constructor(private store: Store<AppState>) {
-    this.store.dispatch(getBikeStationsStart());
     this.bikeStations = this.store.pipe(select(selectBikeStations));
+  }
+
+  public onBikeStationCardClicked(bikeStation: BikeStation): void {
+    this.store.dispatch(showBikeStationInfo({
+      payload: bikeStation
+    }));
   }
 }

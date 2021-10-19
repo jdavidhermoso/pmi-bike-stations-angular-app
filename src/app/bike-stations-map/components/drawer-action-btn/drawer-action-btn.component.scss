@@ -1,0 +1,16 @@
+.action__btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem;
+  width: fit-content;
+
+  a {
+
+    margin-bottom: 0.5rem;
+  }
+
+  &-label {
+    text-align: center;
+  }
+}

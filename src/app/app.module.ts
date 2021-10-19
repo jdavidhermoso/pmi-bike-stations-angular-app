@@ -4,7 +4,8 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
-import * as fromBikeStationsGallery from './state/reducers/bike-stations-gallery.reducer';
+import * as fromBikeStationsGallery from './state/reducers/bike-stations-gallery/bike-stations-gallery.reducer';
+import * as fromBikeStationsMap from './state/reducers/bike-stations-map/bike-stations-map.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {BikeStationsGalleryEffects} from './state/effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,7 +14,9 @@ import {FiltersModule} from './filters/filters.module';
 import {SidenavModule} from './sidenav/sidenav.module';
 import {HeaderModule} from './header/header.module';
 import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './app.routing/app.routing.module';
+import {AppRoutingModule} from './app.routing';
+import {bikeStationsMapReducer} from './state/reducers/bike-stations-map/bike-stations-map.reducer';
+import {BikeStationsMapModule} from './bike-stations-map';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {AppRoutingModule} from './app.routing/app.routing.module';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      bikeStationsGallery: fromBikeStationsGallery.bikeStationsGalleryReducer
+      bikeStationsGallery: fromBikeStationsGallery.bikeStationsGalleryReducer,
+      bikeStationsMap: fromBikeStationsMap.bikeStationsMapReducer
     }),
     EffectsModule.forRoot([BikeStationsGalleryEffects]),
     StoreDevtoolsModule.instrument(),
@@ -32,7 +36,8 @@ import {AppRoutingModule} from './app.routing/app.routing.module';
     SidenavModule,
     HeaderModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    BikeStationsMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]
