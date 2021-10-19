@@ -27,13 +27,17 @@ describe('BikeStationsListComponent', () => {
 
   it('should dispatch showBikeStationInfo', () => {
     component.onBikeStationCardClicked({
-      kmToCityCenter: 8,
-      name: 'Some bike station',
-      img: '',
-      type: '',
-      id: '300',
-      lng: 3.3998,
-      lat: 2.3273
+      img: null,
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
+      town: 'Palma',
+      region: 'Illes Balears'
     });
 
     expect(mockStore.dispatch).toHaveBeenCalled();

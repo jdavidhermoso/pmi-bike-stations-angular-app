@@ -18,13 +18,17 @@ describe('bikeStationsMapReducer', () => {
   it('should set selectedBikeStation', () => {
     const {initialBikeStationsMapState} = fromBikeStationsMap;
     const selectedBikeStation = {
-      img: '001.jpeg',
-      type: 'anchor',
-      id: '31',
-      name: 'PL. MADRID',
-      lng: 2.641010284,
-      lat: 39.57718104,
-      kmToCityCenter: 4
+      img: null,
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
+      town: 'Palma',
+      region: 'Illes Balears'
     };
     const newState: BikeStationsMapState = {
       selectedBikeStation
@@ -50,39 +54,50 @@ describe('bikeStationsMapReducer', () => {
       bikeStationsGallery: {
         bikeStations: {
           stations: [{
-            img: '001.jpeg',
-            type: 'anchor',
-            id: '21',
-            name: 'PALEXANDER FLEMING',
-            lng: 2.655279636,
-            lat: 39.58131563,
-            kmToCityCenter: 3.5
+            img: null,
+            id: '55',
+            name: 'PL. SANTA EULALIA',
+            lng: 2.650655508,
+            lat: 39.56914268,
+            fullAddress: 'Plaça de Santa Eulàlia, 9, 07001 Palma, Illes Balears',
+            street: 'Plaça de Santa Eulàlia',
+            streetNumber: 9,
+            cp: '07001',
+            town: 'Palma',
+            region: 'Illes Balears'
           },
             {
-              img: '001.jpeg',
-              type: 'anchor',
-              id: '31',
-              name: 'PL. MADRID',
-              lng: 2.641010284,
-              lat: 39.57718104,
-              kmToCityCenter: 4
+              img: null,
+              id: '13',
+              name: 'PARC DE ESTACIONS',
+              lng: 2.655408382,
+              lat: 39.57602331,
+              fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+              street: 'Marquès de la Fontsanta',
+              streetNumber: 3,
+              cp: '07005',
+              town: 'Palma',
+              region: 'Illes Balears'
             }
           ]
         },
         filters: {
-          kmToCityCenter: 20,
-          name: ''
+          search: ''
         }
       },
       bikeStationsMap: {
         selectedBikeStation: {
-          img: '001.jpeg',
-          type: 'anchor',
-          id: '21',
-          name: 'PALEXANDER FLEMING',
-          lng: 2.655279636,
-          lat: 39.58131563,
-          kmToCityCenter: 3.5
+          img: null,
+          id: '13',
+          name: 'PARC DE ESTACIONS',
+          lng: 2.655408382,
+          lat: 39.57602331,
+          fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+          street: 'Marquès de la Fontsanta',
+          streetNumber: 3,
+          cp: '07005',
+          town: 'Palma',
+          region: 'Illes Balears'
         }
       },
     };

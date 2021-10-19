@@ -2,7 +2,6 @@
 
 exports[`FiltersFormComponent resetFilters: form control should have initial state values 1`] = `
 Object {
-  "kmToCityCenter": 20,
-  "name": "",
+  "search": "",
 }
 `;

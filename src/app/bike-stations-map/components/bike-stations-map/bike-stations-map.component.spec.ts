@@ -62,13 +62,17 @@ describe('BikeStationsMapComponent', () => {
     };
     const component: BikeStationsMapComponent = new BikeStationsMapComponent(mockStore as any);
     const bikeStation: BikeStation = {
-      img: '003.jpeg',
-      type: 'anchor',
-      id: '01',
-      name: 'PLAÇA DELS PATINS',
-      lng: 2.659399509,
-      lat: 39.56590061,
-      kmToCityCenter: 3
+      img: null,
+      id: '13',
+      name: 'PARC DE ESTACIONS',
+      lng: 2.655408382,
+      lat: 39.57602331,
+      fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+      street: 'Marquès de la Fontsanta',
+      streetNumber: 3,
+      cp: '07005',
+      town: 'Palma',
+      region: 'Illes Balears'
     };
     component.onMarkerClick(bikeStation);
 
