@@ -34,17 +34,4 @@ describe('AppComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should create', done => {
-    mockStore.pipe().subscribe((selectedBikeStation) => {
-      expect(selectedBikeStation).toStrictEqual(bikeStation);
-      done();
-    });
-  });
-
-  it('onCloseBikeStationInfo: should dispatch closeBikeStationInfo', () => {
-    component.onCloseBikeStationInfo();
-
-    expect(mockStore.dispatch).toHaveBeenCalled();
-  });
 });

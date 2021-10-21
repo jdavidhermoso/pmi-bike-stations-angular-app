@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StationInfoDrawerComponent getDirectionsHref: should return url 1`] = `"https://www.google.es/maps/dir/39.598099,2.6788515/39.584114,2.6661/data=!3m1!4b1!4m2!4m1!3e1"`;
+exports[`StationInfoDrawerComponent onBikeDirectionsClick onBikeDirectionsClick: should call window.open 1`] = `
+Array [
+  Array [
+    "https://www.google.es/maps/dir/39.598099,2.6788515/39.584114,2.6661/data=!3m1!4b1!4m2!4m1!3e1",
+    "_blank",
+  ],
+]
+`;

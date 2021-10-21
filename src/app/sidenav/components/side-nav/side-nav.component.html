@@ -1,28 +1,48 @@
-<app-header (toggleSideNavEvent)="toggleSideNav()"></app-header>
-<mat-drawer-container class="side-nav__container" [hasBackdrop]="true" (backdropClick)="onBackdropClicked()">
-  <mat-drawer
-    class="side-nav__drawer"
-    [ngClass]="{'desktop-device' : isDesktopDevice}"
-    #drawer
-    mode="over" [opened]="isSideNaveOpen">
-    <mat-list role="list">
-      <mat-list-item
-        class="side-nav__item"
-        role="listitem">
-        <a routerLink="list">
-          List
-        </a>
-      </mat-list-item>
-      <mat-list-item
-        class="side-nav__item"
-        role="listitem">
-        <a routerLink="map">
-          Map
-        </a>
-      </mat-list-item>
-    </mat-list>
-  </mat-drawer>
-  <mat-drawer-content>
-    <ng-content></ng-content>
-  </mat-drawer-content>
-</mat-drawer-container>
+<div class="side-nav__container">
+  <div
+    *ngIf="!isSideNaveOpen"
+    class="side-nav__toggler" (click)="toggleSideNav()"
+    matTooltip="Show side menu"
+    matTooltipPosition="right">
+    <mat-icon class="toggler__icon">navigate_next</mat-icon>
+  </div>
+  <mat-drawer-container class="side-nav__drawer-container" [hasBackdrop]="true" (backdropClick)="onBackdropClicked()">
+    <mat-drawer
+      class="side-nav__drawer"
+      [ngClass]="{'desktop-device' : isDesktopDevice}"
+      #drawer
+      mode="over" [opened]="isSideNaveOpen">
+
+      <div class="side-nav__header">
+        <div class="header__logo">
+          <h1>
+            Carril Bici Palma
+          </h1>
+          <mat-icon class="close__btn" (click)="toggleSideNav()">close
+          </mat-icon>
+        </div>
+      </div>
+      <div class="side-nav__body">
+        <mat-list role="list">
+          <mat-list-item
+            class="side-nav__item"
+            role="listitem">
+            <a routerLink="list">
+              List
+            </a>
+          </mat-list-item>
+          <mat-list-item
+            class="side-nav__item"
+            role="listitem">
+            <a routerLink="map">
+              Map
+            </a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <ng-content></ng-content>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

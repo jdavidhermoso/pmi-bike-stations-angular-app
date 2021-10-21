@@ -4,6 +4,7 @@ import {BikeStationsListComponent} from './components/bike-stations-list/bike-st
 import {HttpClientModule} from '@angular/common/http';
 import {BikeStationCardComponent} from './components/bike-station-card/bike-station-card.component';
 import {MatCardModule} from '@angular/material/card';
+import {BikeStationsMapModule} from '../bike-stations-map';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,12 @@ import {MatCardModule} from '@angular/material/card';
   exports: [
     BikeStationsListComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    MatCardModule
-  ]
+    imports: [
+        CommonModule,
+        HttpClientModule,
+        MatCardModule,
+        BikeStationsMapModule
+    ]
 })
 export class BikeStationsGalleryModule {
 }

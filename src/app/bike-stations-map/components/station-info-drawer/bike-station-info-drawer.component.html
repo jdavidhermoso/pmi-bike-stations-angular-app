@@ -3,10 +3,11 @@
   [ngClass]="{
   'open' : !!bikeStation,
   'desktop-device' : isDesktopDevice
-  }">
+  }" (backdropClick)="closeInfoDrawer.emit()">
   <mat-drawer
     class="bike__station-info-drawer"
     mode="over" [opened]="!!bikeStation"
+
   >
     <div class="drawer__header">
       <h2>
@@ -20,8 +21,16 @@
     <div class="drawer__body">
       <div class="drawer__actions">
         <app-drawer-action-btn
-          [routeHref]="getDirectionsHref()"></app-drawer-action-btn>
+          tooltipText="Route will be open in a new tab"
+          label="Bike route"
+          (click)="onBikeDirectionsClick()"
+        >
+          <mat-icon>directions_bike</mat-icon>
+        </app-drawer-action-btn>
       </div>
     </div>
   </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
 </mat-drawer-container>

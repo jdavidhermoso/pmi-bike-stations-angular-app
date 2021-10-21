@@ -4,7 +4,8 @@ import {AppState} from '../../../models/app.state';
 import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
-import {showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
+import {closeBikeStationInfo, showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
+import {selectSelectedBikeStation} from '../../../state/reducers/bike-stations-map/bike-stations-map.reducer';
 
 @Component({
   selector: 'app-bike-stations-map',
@@ -17,14 +18,22 @@ export class BikeStationsMapComponent {
     lng: 2.654020
   };
   public bikeStations: Observable<BikeStation[]>;
+  public selectedBikeStation: BikeStation | undefined;
 
   constructor(private store: Store<AppState>) {
     this.bikeStations = this.store.pipe(select(selectBikeStations));
+    this.store.pipe(select(selectSelectedBikeStation)).subscribe((bikeStation: BikeStation | undefined) => {
+      this.selectedBikeStation = bikeStation;
+    });
   }
 
   public onMarkerClick(bikeStation: BikeStation): void {
     this.store.dispatch(showBikeStationInfo({
       payload: bikeStation
     }));
+  }
+
+  public onCloseBikeStationInfo(): void {
+    this.store.dispatch(closeBikeStationInfo());
   }
 }

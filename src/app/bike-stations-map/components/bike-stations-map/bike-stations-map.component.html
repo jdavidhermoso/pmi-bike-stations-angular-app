@@ -1,23 +1,34 @@
-<google-map
-  class="map"
-  width="100%"
-  height="100%"
-  [center]="centerCoords"
-  [zoom]="13"
+<app-bike-station-info-drawer
+  [bikeStation]="selectedBikeStation"
+  (closeInfoDrawer)="onCloseBikeStationInfo()"
 >
-  <map-marker
-    *ngFor="let bikeStation of bikeStations | async"
-    [position]="{
+  <google-map
+    class="map"
+    width="100%"
+    height="100%"
+    [center]="centerCoords"
+    [zoom]="13"
+  >
+    <map-marker
+      *ngFor="let bikeStation of bikeStations | async"
+      [position]="{
     lat: bikeStation.lat,
     lng: bikeStation.lng
     }"
-    [title]="bikeStation.name"
-    (mapClick)="onMarkerClick(bikeStation)"
-  ></map-marker>
-  <map-kml-layer url="https://carrilbicipalma.com/assets/bikes_lanes.kml" [options]="{
+      [title]="bikeStation.name"
+      (mapClick)="onMarkerClick(bikeStation)"
+    ></map-marker>
+    <map-kml-layer url="https://carrilbicipalma.com/assets/bikes_lanes.kml" [options]="{
         suppressInfoWindows: true,
         preserveViewport: true
         }">
 
-  </map-kml-layer>
-</google-map>
+    </map-kml-layer>
+  </google-map>
+</app-bike-station-info-drawer>
+
+
+
+
+
+
