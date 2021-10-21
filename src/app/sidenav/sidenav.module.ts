@@ -8,6 +8,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {RouterModule} from '@angular/router';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import {RouterModule} from '@angular/router';
     MatSelectModule,
     MatButtonModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    MatIconModule,
+    MatTooltipModule
   ]
 })
 export class SidenavModule { }

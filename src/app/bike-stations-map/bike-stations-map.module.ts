@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import { DrawerActionBtnComponent } from './components/drawer-action-btn/drawer-action-btn.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DrawerActionBtnComponent } from './components/drawer-action-btn/drawer-
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    MatTooltipModule
   ]
 })
 export class BikeStationsMapModule {

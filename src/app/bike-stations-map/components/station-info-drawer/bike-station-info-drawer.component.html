@@ -21,7 +21,12 @@
     <div class="drawer__body">
       <div class="drawer__actions">
         <app-drawer-action-btn
-          [routeHref]="getDirectionsHref()"></app-drawer-action-btn>
+          tooltipText="Route will be open in a new tab"
+          label="Bike route"
+          (click)="onBikeDirectionsClick()"
+        >
+          <mat-icon>directions_bike</mat-icon>
+        </app-drawer-action-btn>
       </div>
     </div>
   </mat-drawer>

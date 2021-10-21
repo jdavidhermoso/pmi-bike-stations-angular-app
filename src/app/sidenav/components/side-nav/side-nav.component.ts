@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {Router} from '@angular/router';
 
@@ -16,6 +16,7 @@ export class SideNavComponent {
     router.events.subscribe(() => {
       this.isSideNaveOpen = false;
     });
+
   }
 
   public toggleSideNav(): void {
