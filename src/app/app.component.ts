@@ -14,17 +14,12 @@ import {closeBikeStationInfo} from './state/actions/bike-stations-map.actions';
 })
 export class AppComponent {
   public isDesktopDevice: boolean;
-  public selectedBikeStation: BikeStation | undefined;
+
 
   constructor(private deviceService: DeviceDetectorService, private store: Store<AppState>) {
     this.isDesktopDevice = this.deviceService.isDesktop();
     this.store.dispatch(getBikeStationsStart());
-    this.store.pipe(select(selectSelectedBikeStation)).subscribe((bikeStation: BikeStation | undefined) => {
-      this.selectedBikeStation = bikeStation;
-    });
   }
 
-  public onCloseBikeStationInfo(): void {
-    this.store.dispatch(closeBikeStationInfo());
-  }
+
 }

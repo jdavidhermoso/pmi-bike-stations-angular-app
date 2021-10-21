@@ -3,10 +3,11 @@
   [ngClass]="{
   'open' : !!bikeStation,
   'desktop-device' : isDesktopDevice
-  }">
+  }" (backdropClick)="closeInfoDrawer.emit()">
   <mat-drawer
     class="bike__station-info-drawer"
     mode="over" [opened]="!!bikeStation"
+
   >
     <div class="drawer__header">
       <h2>
@@ -24,4 +25,7 @@
       </div>
     </div>
   </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
 </mat-drawer-container>

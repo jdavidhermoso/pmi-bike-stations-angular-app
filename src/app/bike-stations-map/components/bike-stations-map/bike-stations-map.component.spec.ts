@@ -1,10 +1,11 @@
-import {BikeStationsMapComponent} from './bike-stations-map.component';
 import {of} from 'rxjs';
-import {BikeStation} from '../../../models/bike-station';
-import {bikeStationsMapActionsIds} from '../../../state/actions/bike-stations-map.actions';
+import {BikeStationsMapComponent} from './bike-stations-map.component';
 
 describe('BikeStationsMapComponent', () => {
-  it('centerCoords should be set', () => {
+
+  let component: BikeStationsMapComponent;
+
+  it('should dispatch showBikeStationInfo', () => {
     const mockStore = {
       dispatch: jest.fn(),
       pipe: jest.fn(() => of([
@@ -18,67 +19,72 @@ describe('BikeStationsMapComponent', () => {
         }
       ]))
     };
-    const component: BikeStationsMapComponent = new BikeStationsMapComponent(mockStore as any);
-
-    expect(component.centerCoords).toMatchSnapshot();
-  });
-
-  it('bikeStations should be set', done => {
-    const bikeStations = [
-      {
-        img: '003.jpeg',
-        type: 'anchor',
-        id: '01',
-        name: 'PLAÇA DELS PATINS',
-        lng: 2.659399509,
-        lat: 39.56590061
-      }
-    ];
-    const mockStore = {
-      dispatch: jest.fn(),
-      pipe: jest.fn(() => of(bikeStations))
-    };
-    const component: BikeStationsMapComponent = new BikeStationsMapComponent(mockStore as any);
-
-    component.bikeStations.subscribe((bikeStationsFromstrore: BikeStation[]) => {
-      expect(bikeStationsFromstrore).toStrictEqual(bikeStations);
-      done();
-    });
-  });
-  it('onMarkerClick: should dispatch showBikeStationInfo action', () => {
-    const bikeStations = [
-      {
-        img: '003.jpeg',
-        type: 'anchor',
-        id: '01',
-        name: 'PLAÇA DELS PATINS',
-        lng: 2.659399509,
-        lat: 39.56590061
-      }
-    ];
-    const mockStore = {
-      dispatch: jest.fn(),
-      pipe: jest.fn(() => of(bikeStations))
-    };
-    const component: BikeStationsMapComponent = new BikeStationsMapComponent(mockStore as any);
-    const bikeStation: BikeStation = {
+    component = new BikeStationsMapComponent(mockStore as any);
+    component.onMarkerClick({
       img: null,
-      id: '13',
-      name: 'PARC DE ESTACIONS',
-      lng: 2.655408382,
-      lat: 39.57602331,
-      fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
-      street: 'Marquès de la Fontsanta',
-      streetNumber: 3,
-      cp: '07005',
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
+      town: 'Palma',
+      region: 'Illes Balears'
+    });
+
+    expect(mockStore.dispatch).toHaveBeenCalled();
+  });
+  it('should set selectedBikeStation', done => {
+    const bikeStation = {
+      img: null,
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
       town: 'Palma',
       region: 'Illes Balears'
     };
-    component.onMarkerClick(bikeStation);
+    const mockStore = {
+      dispatch: jest.fn(),
+      pipe: jest.fn(() => of(bikeStation)
+      )
+    };
+    component = new BikeStationsMapComponent(mockStore as any);
 
-    expect(mockStore.dispatch).toHaveBeenCalledWith({
-      payload: bikeStation,
-      type: bikeStationsMapActionsIds.showBikeStationInfo
+    mockStore.pipe().subscribe((selectedBikeStation) => {
+      expect(selectedBikeStation).toStrictEqual(bikeStation);
+      done();
     });
+  });
+
+  it('onCloseBikeStationInfo: should dispatch closeBikeStationInfo', () => {
+    const bikeStation = {
+      img: null,
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
+      town: 'Palma',
+      region: 'Illes Balears'
+    };
+    const mockStore = {
+      dispatch: jest.fn(),
+      pipe: jest.fn(() => of(bikeStation)
+      )
+    };
+    component = new BikeStationsMapComponent(mockStore as any);
+    component.onCloseBikeStationInfo();
+
+    expect(mockStore.dispatch).toHaveBeenCalled();
   });
 });

@@ -1,20 +1,26 @@
-<div class="foo">
-  <h2>
-    Bike stations
-  </h2>
-  <ng-container *ngIf="(bikeStations | async) as bikeStations">
-    <ng-container *ngIf="bikeStations.length;else nodata">
-      <div class="bike__stations-list-container">
-        <app-bike-station-card
-          *ngFor="let bikeStation of bikeStations"
-          [bikeStation]="bikeStation"
-          class="bike__station-card"
-          (click)="onBikeStationCardClicked(bikeStation)">
-        </app-bike-station-card>
-      </div>
+<app-bike-station-info-drawer
+  [bikeStation]="selectedBikeStation"
+  (closeInfoDrawer)="onCloseBikeStationInfo()"
+>
+  <div class="bike__stations-list-title">
+    <h2>
+      Bike stations
+    </h2>
+    <ng-container *ngIf="(bikeStations | async) as bikeStations">
+      <ng-container *ngIf="bikeStations.length;else nodata">
+        <div class="bike__stations-list-container">
+          <app-bike-station-card
+            *ngFor="let bikeStation of bikeStations"
+            [bikeStation]="bikeStation"
+            class="bike__station-card"
+            (click)="onBikeStationCardClicked(bikeStation)">
+          </app-bike-station-card>
+        </div>
+      </ng-container>
     </ng-container>
-  </ng-container>
-</div>
-<ng-template #nodata>
-  There are no stations matching filters criteria
-</ng-template>
+  </div>
+  <ng-template #nodata>
+    There are no stations matching filters criteria
+  </ng-template>
+</app-bike-station-info-drawer>
+

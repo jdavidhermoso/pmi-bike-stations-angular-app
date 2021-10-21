@@ -12,10 +12,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-gallery.module';
 import {FiltersModule} from './filters/filters.module';
 import {SidenavModule} from './sidenav/sidenav.module';
-import {HeaderModule} from './header/header.module';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app.routing';
-import {bikeStationsMapReducer} from './state/reducers/bike-stations-map/bike-stations-map.reducer';
 import {BikeStationsMapModule} from './bike-stations-map';
 
 @NgModule({
@@ -34,7 +32,6 @@ import {BikeStationsMapModule} from './bike-stations-map';
     BikeStationsGalleryModule,
     FiltersModule,
     SidenavModule,
-    HeaderModule,
     AppRoutingModule,
     RouterModule,
     BikeStationsMapModule

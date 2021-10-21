@@ -1,12 +1,5 @@
-<app-bike-station-info-drawer
-  [bikeStation]="selectedBikeStation"
-  (closeInfoDrawer)="onCloseBikeStationInfo()"
-></app-bike-station-info-drawer>
 <app-side-nav>
   <div class="app__container" [ngClass]="{'desktop-device' : isDesktopDevice}">
-    <div class="filters">
-      <app-filters></app-filters>
-    </div>
     <div class="bike__stations-list">
       <router-outlet></router-outlet>
     </div>
