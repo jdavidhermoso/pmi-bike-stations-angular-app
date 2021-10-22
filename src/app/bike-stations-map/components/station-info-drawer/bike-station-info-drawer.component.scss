@@ -19,6 +19,17 @@
   border-bottom: 1px solid #ccc;
 }
 
+.drawer__address {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ccc;
+
+  &-icon {
+    margin-right: 0.5rem;
+  }
+}
+
 .drawer__actions {
   padding: 1rem 0;
 }

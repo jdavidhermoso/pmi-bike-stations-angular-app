@@ -19,6 +19,12 @@
       </mat-icon>
     </div>
     <div class="drawer__body">
+      <div class="drawer__address">
+        <span class="drawer__address-icon">
+          <mat-icon>location_on</mat-icon>
+        </span>
+        <span> {{bikeStation?.fullAddress}}</span>
+      </div>
       <div class="drawer__actions">
         <app-drawer-action-btn
           tooltipText="Route will be open in a new tab"
