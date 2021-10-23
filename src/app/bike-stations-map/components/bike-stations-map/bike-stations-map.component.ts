@@ -23,7 +23,6 @@ export class BikeStationsMapComponent {
   public bikeStations: Observable<BikeStation[]>;
   public selectedBikeStation: BikeStation | undefined;
   public distanceFromDeviceLocationToSelectedBikeStation: Observable<any>;
-  public isDeviceLocationActivated = false;
 
   constructor(private store: Store<AppState>) {
     this.bikeStations = this.store.pipe(select(selectBikeStations));

@@ -34,13 +34,10 @@
           <mat-icon>near_me</mat-icon>
         </span>
 
-        <span *ngIf="isDeviceLocationActivated && distanceFromDeviceLocationToSelectedBikeStation">
+        <span *ngIf="distanceFromDeviceLocationToSelectedBikeStation">
           You are {{distanceFromDeviceLocationToSelectedBikeStation}} Km. away.
         </span>
-        <span *ngIf="isDeviceLocationActivated && !distanceFromDeviceLocationToSelectedBikeStation">
-          Loading your distance to station...
-        </span>
-        <span *ngIf="!isDeviceLocationActivated"> We could not detect your location to determine your distance to the station. </span>
+        <span *ngIf="!distanceFromDeviceLocationToSelectedBikeStation"> We could not detect your location to determine your distance to the station. </span>
       </div>
       <div class="drawer__actions">
         <app-drawer-action-btn
