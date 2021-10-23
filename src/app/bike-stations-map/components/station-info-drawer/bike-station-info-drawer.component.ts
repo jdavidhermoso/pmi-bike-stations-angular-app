@@ -14,9 +14,6 @@ export class BikeStationInfoDrawerComponent {
   @Input()
   public distanceFromDeviceLocationToSelectedBikeStation = '';
 
-  @Input()
-  public isDeviceLocationActivated = false;
-
   @Output()
   public closeInfoDrawer: EventEmitter<void> = new EventEmitter<void>();
 
