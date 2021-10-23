@@ -9,6 +9,8 @@ import {
   selectDistanceToSelectedBikeStation,
   selectSelectedBikeStation
 } from '../../../state/reducers/selected-bike-station/selected-bike-station.reducer';
+import {selectDeviceLocation} from '../../../state/reducers/device-location';
+import {Location} from '../../../models/location';
 
 @Component({
   selector: 'app-bike-stations-map',
@@ -23,6 +25,7 @@ export class BikeStationsMapComponent {
   public bikeStations: Observable<BikeStation[]>;
   public selectedBikeStation: BikeStation | undefined;
   public distanceFromDeviceLocationToSelectedBikeStation: Observable<any>;
+  public deviceLocation: Observable<Location>;
 
   constructor(private store: Store<AppState>) {
     this.bikeStations = this.store.pipe(select(selectBikeStations));
@@ -31,6 +34,7 @@ export class BikeStationsMapComponent {
     });
 
     this.distanceFromDeviceLocationToSelectedBikeStation = this.store.pipe(select(selectDistanceToSelectedBikeStation));
+    this.deviceLocation = this.store.pipe(select(selectDeviceLocation));
   }
 
   public onMarkerClick(bikeStation: BikeStation): void {
