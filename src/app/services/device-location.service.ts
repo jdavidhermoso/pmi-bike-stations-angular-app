@@ -8,7 +8,8 @@ import {Location} from '../models/location';
   providedIn: 'root'
 })
 export class DeviceLocationService {
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>) {
+  }
 
   private static degToRad(deg: number): number {
     return deg * Math.PI / 180;

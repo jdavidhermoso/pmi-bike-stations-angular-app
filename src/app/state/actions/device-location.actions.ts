@@ -7,6 +7,7 @@ export const deviceLocationActionsIds = {
 };
 
 export const deviceLocationRequest = createAction(deviceLocationActionsIds.request);
+
 export const deviceLocationSuccess = createAction(deviceLocationActionsIds.success,
   props<{ deviceLocation: any }>());
 export const deviceLocationError = createAction(deviceLocationActionsIds.error);

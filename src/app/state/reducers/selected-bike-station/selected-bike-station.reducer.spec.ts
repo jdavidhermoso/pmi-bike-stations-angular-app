@@ -109,4 +109,61 @@ describe('bikeStationsMapReducer', () => {
     expect(fromBikeStationsMap.selectSelectedBikeStation(appState)).toStrictEqual(appState.selectedBikeStation);
   });
 
+  it('selectDistanceToSelectedBikeStation: should return distance from device location to selected bike station', () => {
+    const appState: AppState = {
+      bikeStationsGallery: {
+        bikeStations: {
+          stations: [{
+            img: null,
+            id: '55',
+            name: 'PL. SANTA EULALIA',
+            lng: 2.650655508,
+            lat: 39.56914268,
+            fullAddress: 'Plaça de Santa Eulàlia, 9, 07001 Palma, Illes Balears',
+            street: 'Plaça de Santa Eulàlia',
+            streetNumber: 9,
+            cp: '07001',
+            town: 'Palma',
+            region: 'Illes Balears'
+          },
+            {
+              img: null,
+              id: '13',
+              name: 'PARC DE ESTACIONS',
+              lng: 2.655408382,
+              lat: 39.57602331,
+              fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+              street: 'Marquès de la Fontsanta',
+              streetNumber: 3,
+              cp: '07005',
+              town: 'Palma',
+              region: 'Illes Balears'
+            }
+          ]
+        },
+        filters: {
+          search: ''
+        }
+      },
+      selectedBikeStation: {
+        img: null,
+        id: '13',
+        name: 'PARC DE ESTACIONS',
+        lng: 2.655408382,
+        lat: 39.57602331,
+        fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+        street: 'Marquès de la Fontsanta',
+        streetNumber: 3,
+        cp: '07005',
+        town: 'Palma',
+        region: 'Illes Balears'
+      },
+      deviceLocation: {
+        lat: 3.66,
+        lng: 2.58
+      }
+    };
+    expect(fromBikeStationsMap.selectDistanceToSelectedBikeStation(appState)).toMatchSnapshot();
+  });
+
 });

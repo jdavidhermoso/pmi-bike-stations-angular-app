@@ -25,6 +25,23 @@
         </span>
         <span> {{bikeStation?.fullAddress}}</span>
       </div>
+      <ng-container>
+
+      </ng-container>
+      <div
+        class="drawer__distance">
+        <span class="drawer__distance-icon">
+          <mat-icon>near_me</mat-icon>
+        </span>
+
+        <span *ngIf="isDeviceLocationActivated && distanceFromDeviceLocationToSelectedBikeStation">
+          You are {{distanceFromDeviceLocationToSelectedBikeStation}} Km. away.
+        </span>
+        <span *ngIf="isDeviceLocationActivated && !distanceFromDeviceLocationToSelectedBikeStation">
+          Loading your distance to station...
+        </span>
+        <span *ngIf="!isDeviceLocationActivated"> We could not detect your location to determine your distance to the station. </span>
+      </div>
       <div class="drawer__actions">
         <app-drawer-action-btn
           tooltipText="Route will be open in a new tab"

@@ -5,7 +5,10 @@ import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
 import {closeBikeStationInfo, showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
-import {selectSelectedBikeStation} from '../../../state/reducers/selected-bike-station/selected-bike-station.reducer';
+import {
+  selectDistanceToSelectedBikeStation,
+  selectSelectedBikeStation
+} from '../../../state/reducers/selected-bike-station/selected-bike-station.reducer';
 
 @Component({
   selector: 'app-bike-stations-list',
@@ -15,12 +18,14 @@ import {selectSelectedBikeStation} from '../../../state/reducers/selected-bike-s
 export class BikeStationsListComponent {
   public bikeStations: Observable<BikeStation[]>;
   public selectedBikeStation: BikeStation | undefined;
+  public distanceFromDeviceLocationToSelectedBikeStation: Observable<any>;
 
   constructor(private store: Store<AppState>) {
     this.bikeStations = this.store.pipe(select(selectBikeStations));
     this.store.pipe(select(selectSelectedBikeStation)).subscribe((bikeStation: BikeStation | undefined) => {
       this.selectedBikeStation = bikeStation;
     });
+    this.distanceFromDeviceLocationToSelectedBikeStation = this.store.pipe(select(selectDistanceToSelectedBikeStation));
   }
 
   public onBikeStationCardClicked(bikeStation: BikeStation): void {
