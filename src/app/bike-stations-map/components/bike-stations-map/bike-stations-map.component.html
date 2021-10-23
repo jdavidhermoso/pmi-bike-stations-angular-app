@@ -1,5 +1,6 @@
 <app-bike-station-info-drawer
   [bikeStation]="selectedBikeStation"
+  [distanceFromDeviceLocationToSelectedBikeStation]="distanceFromDeviceLocationToSelectedBikeStation | async"
   (closeInfoDrawer)="onCloseBikeStationInfo()"
 >
   <google-map

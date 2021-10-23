@@ -6,14 +6,20 @@ describe('BikeStationsGalleryService', () => {
   let service: BikeStationsGalleryService;
   const httpClientMock = {
     get: jest.fn(() => of([
-        {
-          img: '001.jpeg',
-          type: 'anchor',
-          id: '01',
-          name: 'PARC DE SES VELES',
-          lng: 2.659399509,
-          lat: 39.56590061
-        }]
+          {
+            img: null,
+            id: '27',
+            name: 'PL. PARIS',
+            lng: 2.649158,
+            lat: 39.584186,
+            fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+            street: 'Plaça de París',
+            streetNumber: 1,
+            cp: '07010',
+            town: 'Palma',
+            region: 'Illes Balears'
+          }
+        ]
       )
     )
   };

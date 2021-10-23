@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BikeStation} from '../../../models/bike-station';
 import {DeviceDetectorService} from 'ngx-device-detector';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bike-station-info-drawer',
@@ -11,6 +10,12 @@ import {Router} from '@angular/router';
 export class BikeStationInfoDrawerComponent {
   @Input()
   public bikeStation: BikeStation | undefined;
+
+  @Input()
+  public distanceFromDeviceLocationToSelectedBikeStation = '';
+
+  @Input()
+  public isDeviceLocationActivated = false;
 
   @Output()
   public closeInfoDrawer: EventEmitter<void> = new EventEmitter<void>();

@@ -2,6 +2,8 @@
 
 exports[`bikeStationsMapReducer closeBikeStationInfo: should set selectedBikeStation to undefined 1`] = `undefined`;
 
+exports[`bikeStationsMapReducer selectDistanceToSelectedBikeStation: should return distance from device location to selected bike station 1`] = `"3993.69"`;
+
 exports[`bikeStationsMapReducer should set selectedBikeStation 1`] = `
 Object {
   "cp": "07010",

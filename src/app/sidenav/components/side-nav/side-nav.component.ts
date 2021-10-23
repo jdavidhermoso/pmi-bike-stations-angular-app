@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {Router} from '@angular/router';
 

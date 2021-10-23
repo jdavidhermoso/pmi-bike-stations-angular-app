@@ -1,9 +1,5 @@
 import * as fromBikeStationsGallery from './bike-stations-gallery.reducer';
-import {
-  BikeStationsGalleryState,
-  filterBikeStationByNameOrAddress,
-  filterBikeStations,
-} from './bike-stations-gallery.reducer';
+import {BikeStationsGalleryState, filterBikeStationByNameOrAddress, filterBikeStations} from './bike-stations-gallery.reducer';
 import {getBikeStationsSuccess} from '../../actions';
 import {AppState} from '../../../models/app.state';
 import {filter} from '../../actions/filters.actions';
@@ -100,9 +96,8 @@ describe('bikeStationsGalleryReducer', () => {
           search: ''
         }
       },
-      selectedBikeStation: {
-        selectedBikeStation: undefined
-      },
+      selectedBikeStation: undefined,
+      deviceLocation: undefined
     };
     expect(fromBikeStationsGallery.selectBikeStationsGalleryState(appState)).toStrictEqual(appState.bikeStationsGallery);
   });
@@ -117,9 +112,8 @@ describe('bikeStationsGalleryReducer', () => {
           search: ''
         }
       },
-      selectedBikeStation: {
-        selectedBikeStation: undefined
-      },
+      selectedBikeStation: undefined,
+      deviceLocation: undefined
     };
     expect(fromBikeStationsGallery.selectBikeStations(appState)).toStrictEqual(appState.bikeStationsGallery.bikeStations.stations);
   });

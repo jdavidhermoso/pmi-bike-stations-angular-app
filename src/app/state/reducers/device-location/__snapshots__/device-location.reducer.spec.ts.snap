@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deviceLocationReducer should set selectedBikeStation 1`] = `
+Object {
+  "lat": 3.87,
+  "lng": 2.56,
+}
+`;
+
+exports[`deviceLocationReducer unknown action should return the default state 1`] = `
+Object {
+  "deviceLocation": Object {
+    "lat": 3.87,
+    "lng": 2.56,
+  },
+}
+`;
