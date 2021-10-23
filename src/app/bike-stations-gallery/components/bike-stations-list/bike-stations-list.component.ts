@@ -5,7 +5,7 @@ import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
 import {closeBikeStationInfo, showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
-import {selectSelectedBikeStation} from '../../../state/reducers/bike-stations-map/bike-stations-map.reducer';
+import {selectSelectedBikeStation} from '../../../state/reducers/bike-stations-map/selected-bike-station.reducer';
 
 @Component({
   selector: 'app-bike-stations-list',
@@ -25,7 +25,7 @@ export class BikeStationsListComponent {
 
   public onBikeStationCardClicked(bikeStation: BikeStation): void {
     this.store.dispatch(showBikeStationInfo({
-      payload: bikeStation
+      selectedBikeStation: bikeStation
     }));
   }
 

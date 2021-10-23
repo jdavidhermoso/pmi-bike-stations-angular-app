@@ -3,7 +3,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
 import {getBikeStationsStart} from './state/actions';
 import {select, Store} from '@ngrx/store';
 import {AppState} from './models/app.state';
-import {selectSelectedBikeStation} from './state/reducers/bike-stations-map/bike-stations-map.reducer';
+import {selectSelectedBikeStation} from './state/reducers/bike-stations-map/selected-bike-station.reducer';
 import {BikeStation} from './models/bike-station';
 import {closeBikeStationInfo} from './state/actions/bike-stations-map.actions';
 

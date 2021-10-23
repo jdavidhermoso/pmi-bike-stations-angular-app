@@ -1,22 +1,19 @@
-import * as fromBikeStationsMap from './bike-stations-map.reducer';
-import {BikeStationsMapState} from './bike-stations-map.reducer';
+import * as fromBikeStationsMap from './selected-bike-station.reducer';
 import {closeBikeStationInfo, showBikeStationInfo} from '../../actions/bike-stations-map.actions';
 import {AppState} from '../../../models/app.state';
 
 describe('bikeStationsMapReducer', () => {
   describe('unknown action', () => {
     it('should return the default state', () => {
-      const {initialBikeStationsMapState} = fromBikeStationsMap;
       const action = {
         type: 'Unexistant action',
       };
-      const state = fromBikeStationsMap.bikeStationsMapReducer(initialBikeStationsMapState, action);
+      const state = fromBikeStationsMap.selectedBikeStationReducer(undefined, action);
 
-      expect(state).toBe(initialBikeStationsMapState);
+      expect(state).toBe(undefined);
     });
   });
   it('should set selectedBikeStation', () => {
-    const {initialBikeStationsMapState} = fromBikeStationsMap;
     const selectedBikeStation = {
       img: null,
       id: '27',
@@ -30,23 +27,32 @@ describe('bikeStationsMapReducer', () => {
       town: 'Palma',
       region: 'Illes Balears'
     };
-    const newState: BikeStationsMapState = {
-      selectedBikeStation
-    };
+    const action = showBikeStationInfo({
+      selectedBikeStation,
+    });
+    const state = fromBikeStationsMap.selectedBikeStationReducer(undefined, action);
 
-    const action = showBikeStationInfo({payload: selectedBikeStation});
-    const state = fromBikeStationsMap.bikeStationsMapReducer(initialBikeStationsMapState, action);
-
-    expect(state).toStrictEqual(newState);
+    expect(state).toMatchSnapshot();
   });
 
   it('closeBikeStationInfo: should set selectedBikeStation to undefined', () => {
-    const {initialBikeStationsMapState} = fromBikeStationsMap;
-
     const action = closeBikeStationInfo();
-    const state = fromBikeStationsMap.bikeStationsMapReducer(initialBikeStationsMapState, action);
+    const selectedBikeStation = {
+      img: null,
+      id: '27',
+      name: 'PL. PARIS',
+      lng: 2.649158,
+      lat: 39.584186,
+      fullAddress: 'Plaça de París, 1, 07010 Palma, Illes Balears',
+      street: 'Plaça de París',
+      streetNumber: 1,
+      cp: '07010',
+      town: 'Palma',
+      region: 'Illes Balears'
+    };
+    const state = fromBikeStationsMap.selectedBikeStationReducer(selectedBikeStation, action);
 
-    expect(state.selectedBikeStation).toStrictEqual(undefined);
+    expect(state).toMatchSnapshot();
   });
 
   it('selectSelectedBikeStation: should return seleted bike station state', () => {
@@ -85,23 +91,21 @@ describe('bikeStationsMapReducer', () => {
           search: ''
         }
       },
-      bikeStationsMap: {
-        selectedBikeStation: {
-          img: null,
-          id: '13',
-          name: 'PARC DE ESTACIONS',
-          lng: 2.655408382,
-          lat: 39.57602331,
-          fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
-          street: 'Marquès de la Fontsanta',
-          streetNumber: 3,
-          cp: '07005',
-          town: 'Palma',
-          region: 'Illes Balears'
-        }
-      },
+      selectedBikeStation: {
+        img: null,
+        id: '13',
+        name: 'PARC DE ESTACIONS',
+        lng: 2.655408382,
+        lat: 39.57602331,
+        fullAddress: 'Marquès de la Fontsanta, 3, 07005 Palma, Illes Balears',
+        street: 'Marquès de la Fontsanta',
+        streetNumber: 3,
+        cp: '07005',
+        town: 'Palma',
+        region: 'Illes Balears'
+      }
     };
-    expect(fromBikeStationsMap.selectSelectedBikeStation(appState)).toStrictEqual(appState.bikeStationsMap.selectedBikeStation);
+    expect(fromBikeStationsMap.selectSelectedBikeStation(appState)).toStrictEqual(appState.selectedBikeStation);
   });
 
 });
