@@ -103,7 +103,8 @@ describe('bikeStationsMapReducer', () => {
         cp: '07005',
         town: 'Palma',
         region: 'Illes Balears'
-      }
+      },
+      deviceLocation: undefined
     };
     expect(fromBikeStationsMap.selectSelectedBikeStation(appState)).toStrictEqual(appState.selectedBikeStation);
   });

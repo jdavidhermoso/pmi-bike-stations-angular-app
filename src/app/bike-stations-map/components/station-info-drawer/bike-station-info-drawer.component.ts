@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BikeStation} from '../../../models/bike-station';
 import {DeviceDetectorService} from 'ngx-device-detector';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bike-station-info-drawer',

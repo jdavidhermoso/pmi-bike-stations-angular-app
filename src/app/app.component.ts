@@ -1,11 +1,9 @@
 import {Component} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {getBikeStationsStart} from './state/actions';
-import {select, Store} from '@ngrx/store';
+import {Store} from '@ngrx/store';
 import {AppState} from './models/app.state';
-import {selectSelectedBikeStation} from './state/reducers/bike-stations-map/selected-bike-station.reducer';
-import {BikeStation} from './models/bike-station';
-import {closeBikeStationInfo} from './state/actions/bike-stations-map.actions';
+import {deviceLocationRequest} from './state/actions/device-location.actions';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +17,7 @@ export class AppComponent {
   constructor(private deviceService: DeviceDetectorService, private store: Store<AppState>) {
     this.isDesktopDevice = this.deviceService.isDesktop();
     this.store.dispatch(getBikeStationsStart());
+    this.store.dispatch(deviceLocationRequest());
   }
 
 

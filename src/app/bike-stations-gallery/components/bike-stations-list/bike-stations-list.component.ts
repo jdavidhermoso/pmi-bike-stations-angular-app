@@ -5,7 +5,7 @@ import {selectBikeStations} from '../../../state/reducers';
 import {Observable} from 'rxjs';
 import {BikeStation} from '../../../models/bike-station';
 import {closeBikeStationInfo, showBikeStationInfo} from '../../../state/actions/bike-stations-map.actions';
-import {selectSelectedBikeStation} from '../../../state/reducers/bike-stations-map/selected-bike-station.reducer';
+import {selectSelectedBikeStation} from '../../../state/reducers/selected-bike-station/selected-bike-station.reducer';
 
 @Component({
   selector: 'app-bike-stations-list',
