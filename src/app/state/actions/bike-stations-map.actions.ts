@@ -7,6 +7,6 @@ export const bikeStationsMapActionsIds = {
 };
 
 export const showBikeStationInfo = createAction(bikeStationsMapActionsIds.showBikeStationInfo,
-  props<{ payload: BikeStation }>());
+  props<{ selectedBikeStation: BikeStation }>());
 
 export const closeBikeStationInfo = createAction(bikeStationsMapActionsIds.closeBikeStationInfo);

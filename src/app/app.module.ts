@@ -5,7 +5,7 @@ import {AppComponent} from './app.component';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
 import * as fromBikeStationsGallery from './state/reducers/bike-stations-gallery/bike-stations-gallery.reducer';
-import * as fromBikeStationsMap from './state/reducers/bike-stations-map/bike-stations-map.reducer';
+import * as fromBikeStationsMap from './state/reducers/bike-stations-map/selected-bike-station.reducer';
 import {EffectsModule} from '@ngrx/effects';
 import {BikeStationsGalleryEffects} from './state/effects';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -24,7 +24,7 @@ import {BikeStationsMapModule} from './bike-stations-map';
     BrowserModule,
     StoreModule.forRoot({
       bikeStationsGallery: fromBikeStationsGallery.bikeStationsGalleryReducer,
-      bikeStationsMap: fromBikeStationsMap.bikeStationsMapReducer
+      selectedBikeStation: fromBikeStationsMap.selectedBikeStationReducer
     }),
     EffectsModule.forRoot([BikeStationsGalleryEffects]),
     StoreDevtoolsModule.instrument(),

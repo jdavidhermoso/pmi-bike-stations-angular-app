@@ -100,7 +100,7 @@ describe('bikeStationsGalleryReducer', () => {
           search: ''
         }
       },
-      bikeStationsMap: {
+      selectedBikeStation: {
         selectedBikeStation: undefined
       },
     };
@@ -117,7 +117,7 @@ describe('bikeStationsGalleryReducer', () => {
           search: ''
         }
       },
-      bikeStationsMap: {
+      selectedBikeStation: {
         selectedBikeStation: undefined
       },
     };
