@@ -10,6 +10,15 @@
     [center]="centerCoords"
     [zoom]="13"
   >
+    <ng-container *ngIf="deviceLocation | async as deviceMarkerPosition">
+      <map-marker
+        title="Your current location"
+        [options]="{
+      icon: '/assets/user-location-icon.svg'
+      }"
+        [position]="deviceMarkerPosition"
+      ></map-marker>
+    </ng-container>
     <map-marker
       *ngFor="let bikeStation of bikeStations | async"
       [position]="{
