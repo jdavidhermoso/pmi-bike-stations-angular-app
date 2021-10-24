@@ -16,7 +16,7 @@ const routes: Route[] = [
   },
   {
     path: '**',
-    redirectTo: 'list'
+    redirectTo: 'map'
   },
 ];
 
@@ -24,7 +24,9 @@ const routes: Route[] = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {
+      useHash: true
+    })
   ]
 })
 export class AppRoutingModule {
