@@ -25,6 +25,9 @@
     lat: bikeStation.lat,
     lng: bikeStation.lng
     }"
+      [options]="{
+      icon: '/assets/bike-station-logo-sm.png'
+      }"
       [title]="bikeStation.name"
       (mapClick)="onMarkerClick(bikeStation)"
     ></map-marker>
