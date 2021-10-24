@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SideNavComponent} from './components/side-nav/side-nav.component';
+import {SideNavComponent, LanguageSelectorComponent} from './components';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatOptionModule} from '@angular/material/core';
@@ -10,11 +10,14 @@ import {MatListModule} from '@angular/material/list';
 import {RouterModule} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
-
+import {TranslateModule} from '@ngx-translate/core';
+import {AppModule} from '../app.module';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    SideNavComponent
+    SideNavComponent,
+    LanguageSelectorComponent
   ],
   exports: [
     SideNavComponent
@@ -29,7 +32,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatListModule,
     RouterModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
-export class SidenavModule { }
+export class SidenavModule {
+}

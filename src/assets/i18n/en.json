@@ -1,0 +1,14 @@
+{
+  "show_side_menu": "Open side menu",
+  "map": "Map",
+  "list_bike_stations": "List of bike stations",
+  "distance_to_station": "You are {{ value }} Km. away",
+  "bike_route": "Bike route",
+  "walk_route": "Walk route",
+  "open_new_tab": "It will be open in a new tab",
+  "english": "English",
+  "spanish": "Spanish",
+  "catalan": "Catalan",
+  "deutsch": "German",
+  "language": "Language"
+}

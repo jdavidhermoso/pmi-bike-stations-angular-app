@@ -35,14 +35,16 @@
         </span>
 
         <span *ngIf="distanceFromDeviceLocationToSelectedBikeStation">
-          You are {{distanceFromDeviceLocationToSelectedBikeStation}} Km. away.
+          {{ 'distance_to_station' | translate:{
+          value: distanceFromDeviceLocationToSelectedBikeStation
+        } }}
         </span>
         <span *ngIf="!distanceFromDeviceLocationToSelectedBikeStation"> We could not detect your location to determine your distance to the station. </span>
       </div>
       <div class="drawer__actions">
         <app-drawer-action-btn
-          tooltipText="Route will be open in a new tab"
-          label="Bike route"
+          tooltipText="{{'open_new_tab' | translate}}"
+          label="{{ 'bike_route' | translate }}"
           (click)="onBikeDirectionsClick()"
         >
           <mat-icon>directions_bike</mat-icon>

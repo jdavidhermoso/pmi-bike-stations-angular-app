@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {RouterModule} from '@angular/router';
 import {DrawerActionBtnComponent} from './components/drawer-action-btn/drawer-action-btn.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -20,16 +21,17 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   exports: [
     BikeStationInfoDrawerComponent
   ],
-  imports: [
-    CommonModule,
-    GoogleMapsModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
-    RouterModule,
-    MatTooltipModule
-  ]
+    imports: [
+        CommonModule,
+        GoogleMapsModule,
+        MatSidenavModule,
+        MatListModule,
+        MatIconModule,
+        MatButtonModule,
+        RouterModule,
+        MatTooltipModule,
+        TranslateModule
+    ]
 })
 export class BikeStationsMapModule {
 }
