@@ -1,3 +1,14 @@
 {
-
+  "show_side_menu": "Seitenmenü öffnen",
+  "karte": "Karte",
+  "list_bike_stations": "Liste der Fahrradstationen",
+  "distance_to_station": "Sie sind {{ value }} Km. entfernt",
+  "bike_route": "Radroute",
+  "walk_route": "Wanderroute",
+  "open_new_tab": "Es wird in einem neuen Tab geöffnet",
+  "Englisch Englisch",
+  "spanisch": "Spanisch",
+  "katalanisch": "katalanisch",
+  "deutsch": "deutsch",
+  "Sprache": "Sprache"
 }
