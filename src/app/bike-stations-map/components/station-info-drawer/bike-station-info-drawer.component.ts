@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BikeStation} from '../../../models/bike-station';
 import {DeviceDetectorService} from 'ngx-device-detector';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-bike-station-info-drawer',
@@ -23,9 +24,15 @@ export class BikeStationInfoDrawerComponent {
     this.isDesktopDevice = this.deviceDetectorService.isDesktop();
   }
 
+  public onWalkDirectionsClick(): void {
+    if (this.bikeStation) {
+      window.open(`https://www.google.com/maps/dir/39.598099,2.6788515/${this.bikeStation.lat},${this.bikeStation.lng}/data=!3m1!4b1!4m2!4m1!3e2`, '_blank');
+    }
+  }
+
   public onBikeDirectionsClick(): void {
     if (this.bikeStation) {
-      window.open(`https://www.google.es/maps/dir/39.598099,2.6788515/${this.bikeStation.lat},${this.bikeStation.lng}/data=!3m1!4b1!4m2!4m1!3e1`, '_blank');
+      window.open(`https://www.google.com/maps/dir/39.598099,2.6788515/${this.bikeStation.lat},${this.bikeStation.lng}/data=!3m1!4b1!4m2!4m1!3e1`, '_blank');
     }
   }
 }
