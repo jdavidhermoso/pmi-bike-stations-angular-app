@@ -14,13 +14,23 @@ import {BikeStationsGalleryModule} from './bike-stations-gallery/bike-stations-g
 import {FiltersModule} from './filters/filters.module';
 import {SidenavModule} from './sidenav/sidenav.module';
 import {RouterModule} from '@angular/router';
-import {AppRoutingModule} from './app.routing';
 import {BikeStationsMapModule} from './bike-stations-map';
 import {DeviceLocationEffects} from './state/effects/device-location.effects';
+import {AppRoutingModule} from './app.routing.module';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';
+
+export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +47,18 @@ import {DeviceLocationEffects} from './state/effects/device-location.effects';
     SidenavModule,
     AppRoutingModule,
     RouterModule,
-    BikeStationsMapModule
+    BikeStationsMapModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

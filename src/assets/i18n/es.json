@@ -1,0 +1,14 @@
+{
+  "show_side_menu": "Abrir menú lateral",
+  "map": "Mapa",
+  "list_bike_stations": "Lista de estaciones",
+  "distance_to_station": "Estás a {{ value }} Km.",
+  "bike_route": "Ruta en bici",
+  "walk_route": "Ruta a pie",
+  "open_new_tab": "Se abrirá en una nueva pestaña",
+  "english": "Inglés",
+  "spanish": "Español",
+  "catalan": "Catalán",
+  "deutsch": "Alemán",
+  "language": "Idioma"
+}

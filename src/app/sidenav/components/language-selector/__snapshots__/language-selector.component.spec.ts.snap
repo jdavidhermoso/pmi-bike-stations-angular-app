@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSelectorComponent should call localStorage.setItem 1`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      "lang",
+      "ca",
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;

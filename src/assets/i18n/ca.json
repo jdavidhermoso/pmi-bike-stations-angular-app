@@ -1,0 +1,14 @@
+{
+  "show_side_menu": "Obrir menú lateral",
+  "map": "Mapa",
+  "list_bike_stations": "Llista d'estacions",
+  "distance_to_station": "Ets a {{ value }} Km.",
+  "bike_route": "Ruta en bici",
+  "walk_route": "Ruta a peu",
+  "open_new_tab": "S' Obrira en una nova pestanya",
+  "english": "Anglés",
+  "spanish": "Espanyol",
+  "catalan": "Català",
+  "deutsch": "Alemany",
+  "language": "Idioma"
+}

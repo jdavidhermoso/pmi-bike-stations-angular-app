@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {BikeStationCardComponent} from './components/bike-station-card/bike-station-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {BikeStationsMapModule} from '../bike-stations-map';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {BikeStationsMapModule} from '../bike-stations-map';
         CommonModule,
         HttpClientModule,
         MatCardModule,
-        BikeStationsMapModule
+        BikeStationsMapModule,
+        TranslateModule
     ]
 })
 export class BikeStationsGalleryModule {

@@ -2,7 +2,7 @@
   <div
     *ngIf="!isSideNaveOpen"
     class="side-nav__toggler" (click)="toggleSideNav()"
-    matTooltip="Show side menu"
+    matTooltip="{{ 'show_side_menu' | translate }}"
     matTooltipPosition="right">
     <mat-icon class="toggler__icon">navigate_next</mat-icon>
   </div>
@@ -14,31 +14,35 @@
       mode="over" [opened]="isSideNaveOpen">
 
       <div class="side-nav__header">
-        <div class="header__logo">
-          <h1>
-            Carril Bici Palma
-          </h1>
-          <mat-icon class="close__btn" (click)="toggleSideNav()">close
-          </mat-icon>
-        </div>
+        <h1>
+          Carril Bici Palma
+        </h1>
+        <mat-icon
+          class="close__btn"
+          (click)="toggleSideNav()">
+          close
+        </mat-icon>
       </div>
       <div class="side-nav__body">
-        <mat-list role="list">
-          <mat-list-item
-            class="side-nav__item"
-            role="listitem">
-            <a routerLink="map">
-              Map
-            </a>
-          </mat-list-item>
-          <mat-list-item
-            class="side-nav__item"
-            role="listitem">
-            <a routerLink="list">
-              List of bike stations
-            </a>
-          </mat-list-item>
-        </mat-list>
+        <div class="side-nav__items-list">
+          <mat-list role="list">
+            <mat-list-item
+              class="side-nav__item"
+              role="listitem">
+              <a routerLink="map">
+                {{'map' | translate}}
+              </a>
+            </mat-list-item>
+            <mat-list-item
+              class="side-nav__item"
+              role="listitem">
+              <a routerLink="list">
+                {{'list_bike_stations' | translate}}
+              </a>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <app-language-selector></app-language-selector>
       </div>
     </mat-drawer>
     <mat-drawer-content>
