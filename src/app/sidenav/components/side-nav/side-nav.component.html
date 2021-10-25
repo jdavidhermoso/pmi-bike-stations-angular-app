@@ -1,7 +1,9 @@
 <div class="side-nav__container">
   <div
     *ngIf="!isSideNaveOpen"
-    class="side-nav__toggler" (click)="toggleSideNav()"
+    class="side-nav__toggler"
+    id="side-nav-toggler"
+    (click)="toggleSideNav()"
     matTooltip="{{ 'show_side_menu' | translate }}"
     matTooltipPosition="right">
     <mat-icon class="toggler__icon">navigate_next</mat-icon>
@@ -18,6 +20,7 @@
           Carril Bici Palma
         </h1>
         <mat-icon
+          id="close-side-menu-btn"
           class="close__btn"
           (click)="toggleSideNav()">
           close
@@ -27,6 +30,7 @@
         <div class="side-nav__items-list">
           <mat-list role="list">
             <mat-list-item
+              id="bike-stations-map-nav-item"
               class="side-nav__item"
               role="listitem">
               <a routerLink="map">
@@ -34,6 +38,7 @@
               </a>
             </mat-list-item>
             <mat-list-item
+              id="bike-stations-list-nav-item"
               class="side-nav__item"
               role="listitem">
               <a routerLink="list">

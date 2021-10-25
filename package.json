@@ -19,7 +19,8 @@
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/dist/",
-      "<rootDir>/src/test.ts"
+      "<rootDir>/src/test.ts",
+      "<rootDir>/src/services/app-tour/app-tour.service.ts"
     ],
     "coverageThreshold": {
       "global": {
@@ -60,6 +61,7 @@
     "@ngrx/store": "^12.4.0",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
+    "angular-shepherd": "^12.0.0",
     "ngx-device-detector": "^2.1.1",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.6.0",

@@ -20,7 +20,7 @@
       ></map-marker>
     </ng-container>
     <map-marker
-      *ngFor="let bikeStation of bikeStations | async"
+      *ngFor="let bikeStation of bikeStations | async; let i = index;"
       [position]="{
     lat: bikeStation.lat,
     lng: bikeStation.lng

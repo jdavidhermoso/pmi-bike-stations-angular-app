@@ -4,7 +4,7 @@ import {AppState} from '../../../models/app.state';
 import {selectDeviceLocation} from '../device-location';
 import {BikeStation} from '../../../models/bike-station';
 import {Location} from '../../../models/location';
-import {DeviceLocationService} from '../../../services/device-location.service';
+import {DeviceLocationService} from '../../../services/device-location/device-location.service';
 
 export const selectSelectedBikeStation = (appState: AppState) => appState.selectedBikeStation;
 

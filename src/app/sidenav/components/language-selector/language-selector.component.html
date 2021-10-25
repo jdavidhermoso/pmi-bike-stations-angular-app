@@ -1,4 +1,5 @@
-<mat-form-field appearance="fill">
+<mat-form-field
+  appearance="fill">
   <mat-label> {{ 'language' | translate }}</mat-label>
   <mat-select [formControl]="languageSelectorControl">
     <mat-option *ngFor="let language of languages" [value]="language.value">
