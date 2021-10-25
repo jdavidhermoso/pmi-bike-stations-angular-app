@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {AppState} from '../models/app.state';
-import {deviceLocationSuccess} from '../state/actions/device-location.actions';
-import {Location} from '../models/location';
+import {AppState} from '../../models/app.state';
+import {deviceLocationSuccess} from '../../state/actions/device-location.actions';
+import {Location} from '../../models/location';
 
 @Injectable({
   providedIn: 'root'

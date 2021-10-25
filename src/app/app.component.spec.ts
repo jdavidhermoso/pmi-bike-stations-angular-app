@@ -27,11 +27,18 @@ describe('AppComponent', () => {
     )
   };
 
+
+  const startAppTourMock = jest.fn();
+  const appTourServiceMock = {
+    startAppTour: startAppTourMock
+  };
+
   beforeEach(() => {
-    component = new AppComponent(deviceDetectorMock as any, mockStore as any);
+    component = new AppComponent(deviceDetectorMock as any, mockStore as any, appTourServiceMock as any);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should call startAppTour', () => {
+    component.ngOnInit();
+    expect(startAppTourMock).toHaveBeenCalled();
   });
 });
