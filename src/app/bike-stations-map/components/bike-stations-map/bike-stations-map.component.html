@@ -3,41 +3,7 @@
   [distanceFromDeviceLocationToSelectedBikeStation]="distanceFromDeviceLocationToSelectedBikeStation | async"
   (closeInfoDrawer)="onCloseBikeStationInfo()"
 >
-  <google-map
-    class="map"
-    width="100%"
-    height="100%"
-    [center]="centerCoords"
-    [zoom]="13"
-  >
-    <ng-container *ngIf="deviceLocation | async as deviceMarkerPosition">
-      <map-marker
-        title="Your current location"
-        [options]="{
-      icon: '/assets/user-location-icon.svg'
-      }"
-        [position]="deviceMarkerPosition"
-      ></map-marker>
-    </ng-container>
-    <map-marker
-      *ngFor="let bikeStation of bikeStations | async; let i = index;"
-      [position]="{
-    lat: bikeStation.lat,
-    lng: bikeStation.lng
-    }"
-      [options]="{
-      icon: '/assets/bike-station-logo-sm.png'
-      }"
-      [title]="bikeStation.name"
-      (mapClick)="onMarkerClick(bikeStation)"
-    ></map-marker>
-    <map-kml-layer url="https://carrilbicipalma.com/assets/bikes_lanes.kml" [options]="{
-        suppressInfoWindows: true,
-        preserveViewport: true
-        }">
-
-    </map-kml-layer>
-  </google-map>
+  <div id="map"></div>
 </app-bike-station-info-drawer>
 
 

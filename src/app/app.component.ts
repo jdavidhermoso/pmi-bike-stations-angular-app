@@ -6,6 +6,8 @@ import {AppState} from './models/app.state';
 import {deviceLocationRequest} from './state/actions/device-location.actions';
 import {AppTourService} from './services/app-tour/app-tour.service';
 
+declare var ol: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
